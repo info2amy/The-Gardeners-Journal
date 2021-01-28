@@ -1,7 +1,7 @@
 # The-Gardener's-Journal
 ## Overview
 
-_**The Gardener's Journal** is a place to organize all of your ._
+_`The Gardener's Journal ` is a place to collect and organize all of your gardening information:  details, plans, dreams and aspirations!_
 
 
 <br>
@@ -42,8 +42,8 @@ _**The Gardener's Journal** is a place to organize all of your ._
 
 ### Deployment
 
-- Deploy the fully functional front-end via Netlify.
 - Deploy the back-end via Heroku.
+- Deploy the fully functional front-end via Netlify.
 
 ### Procedural 
 
@@ -90,7 +90,7 @@ _**The Gardener's Journal** is a place to organize all of your ._
 
 
 
-- Landscape (Desktop and Tablet) Wireframe
+Landscape (Desktop and Tablet) Wireframe
 <img width="1264" alt="Landscape Wireframe" src="https://user-images.githubusercontent.com/71468425/106158001-e2783380-6148-11eb-83b8-9cc1a4b0e355.png">
 
 Link: https://lucid.app/lucidchart/invitations/accept/5c01b19c-5041-42f3-8038-64fd8f630b8e
@@ -98,7 +98,7 @@ Link: https://lucid.app/lucidchart/invitations/accept/5c01b19c-5041-42f3-8038-64
 
 <br>
 
-- Portrait (Mobile) Wireframe
+Portrait (Mobile) Wireframe
 
 Link: https:
 
@@ -107,31 +107,45 @@ Link: https:
 #### Component Tree
 <img width="1030" alt="Component Tree" src="https://user-images.githubusercontent.com/71468425/106159550-86aeaa00-614a-11eb-9b42-4fe6c7e07900.png">
 
+Link: https://lucid.app/lucidchart/invitations/accept/0f5293f0-7a84-49dd-b37d-2483aa432188
 
 <br>
 
 #### Component Hierarchy
 
-> Use this section to define your React components and the data architecture of your app. This should be a reflection of how you expect your directory/file tree to look like. 
+> This reflects how I expect the directory/file tree to look. 
 
 ``` structure
 
-src
-|__ assets/
-      |__ fonts
-      |__ graphics
-      |__ images
-      |__ mockups
-|__ components/
-      |__ Header.jsx
+client/src
+|__ containers/
+      |__ MainContainer.jsx
+      
+|__ layouts/
+      |__ Layout.jsx
+        |__ Header.jsx
+        |__ Footer.jsx
+      
+|__ screens/
+      |__ CreatePlant.jsx
+      |__ EditPlant.jsx
+      |__ LoginRegister.jsx
+      |__ PlantDetail.jsx
+      |__ Zones.jsx
+      
 |__ services/
+      |__ app-config.js
+      |__ auth.js
+      |__ plants.js
+      |__ zones.js
+
+|__ App.js
+
+|__ index.css
+
+|__ index.js
 
 ```
-
-#### Component Tree
-
-> https://lucid.app/lucidchart/invitations/accept/0f5293f0-7a84-49dd-b37d-2483aa432188
-
 
 #### Time Estimates
 
