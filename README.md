@@ -44,7 +44,7 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 
 > Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
 
-![Dummy Link](url)
+!https://lucid.app/lucidchart/invitations/accept/5c01b19c-5041-42f3-8038-64fd8f630b8e
 
 - Desktop Landing
 
