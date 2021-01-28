@@ -175,7 +175,12 @@ client/src
 
 ## Post-MVP
 
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
+- Add a Footer with links.
+- Change the Login/Register page to a Landing Page modal.
+- Create a Logo.
+- Add Authentication on this site.
+- Allow a gardener to set up and save their personal garden information.
+- Add calendar functionality, to plan watering, pruning, ferilizing, etc.
 
 ***
 
