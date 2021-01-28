@@ -8,9 +8,52 @@ _**The Gardener's Journal** is a place to organize all of your ._
 
 ## MVP
 
-> The Minimum Viable Product should be a well-planned, easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
 
-_The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+for  _The **Gardener's Journal**._  I will:
+
+- Have a **RESTful JSON API**.
+  - Build a **Ruby on Rails** server, exposing RESTful JSON endpoints.
+  - Build a database with at least 3 tables, with at least 1 association.
+  - Utilize **Rails** to define models for interacting with the database.
+  - Implement working generic controller actions for Full CRUD (`index`, `show`, `create`, `update`, `delete`) between non-User tables 
+
+- Have a working, interactive **React** app, built using `npx create-react-app`.
+  - Have at least 8 separate, rendered components in an organized and understandable React file structure.
+  - Utilize functional and class React components appropriately.
+  - Utilize state and props in your components efficiently.
+  - Use _only_ React for DOM Manipulation.
+- Consume data from your **Ruby on Rails API**, and render that data in your components.
+- Utilize **React Router**, for client-side routing.
+- Demonstrate Full CRUD actions ( `index`, `show`, `create`, `update`, and `delete` ) on the front end.
+  - _Note that if you decide to implement Auth, your full CRUD actions must be covered amongst your non-User tables._
+
+### Styling <!-- omit in toc -->
+
+- Be styled with CSS (or SCSS, if you'd prefer).
+- Use Flexbox or Grid in your layout design.
+- Implement 2 media queries for responsive design on 3 screen sizes (including desktop).
+
+### Linting <!-- omit in toc -->
+
+- Indent properly.
+- Utilize high-quality, semantic variable names.
+- Follow `camelCase`, `snake_case`, and `kebab-case` convention.
+- Remove unnecessary boilerplate React files and code.
+- Remove all `console.log()`s and commented out code (functional notes and comments are okay).
+
+### Deployment <!-- omit in toc -->
+
+- Deploy the fully functional front-end via Surge or Netlify.
+- Deploy the back-end via Heroku.
+- Deploy early and often(this will help to debug small issues before they become large issues)
+
+### Procedural <!-- omit in toc -->
+
+- Initialize a **git repo on Github**, with a link to your hosted project.
+- Have **frequent commits**, making a _robust_ commit history at least every day. (75 commits minimum)
+- Use effective and safe **branching and merging** processes.
+
+
 
 <br>
 
@@ -35,42 +78,39 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 | React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
 |     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
 |  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+| Axios            | _Lorem ipsum dolor sit amet, consectetur._ |
+| Ruby            | _Lorem ipsum dolor sit amet, consectetur._ |
+| Rail            | _Lorem ipsum dolor sit amet, consectetur._ |
+| JWT            | _Lorem ipsum dolor sit amet, consectetur._ |
 
 <br>
 
-### Client (Front End)
+### Wireframes
 
-#### Wireframes
 
-> Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
 
-!https://lucid.app/lucidchart/invitations/accept/5c01b19c-5041-42f3-8038-64fd8f630b8e
 
-- Desktop Landing
 
-![Dummy Link](url)
 
-- Desktop Hero
+- Landscape (Desktop and Tablet) Wireframe
+<img width="1264" alt="Landscape Wireframe" src="https://user-images.githubusercontent.com/71468425/106158001-e2783380-6148-11eb-83b8-9cc1a4b0e355.png">
 
-![Dummy Link](url)
+Link: https://lucid.app/lucidchart/invitations/accept/5c01b19c-5041-42f3-8038-64fd8f630b8e
 
-- Resource Index
 
-![Dummy Link](url)
+<br>
 
-- Resource Show
+- Portrait (Mobile) Wireframe
 
-![Dummy Link](url)
+Link: https:
 
-- Tablet Resource Index
-
-![Dummy Link](url)
-
-- Mobile Resource Index
+<br>
 
 #### Component Tree
+- <img width="1030" alt="Component Tree" src="https://user-images.githubusercontent.com/71468425/106159550-86aeaa00-614a-11eb-9b42-4fe6c7e07900.png">
 
-> Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. 
+
+<br>
 
 #### Component Hierarchy
 
@@ -109,11 +149,13 @@ src
 
 <br>
 
-### Server (Back End)
+<br>
 
 #### ERD Model
 
-> https://whimsical.com/gardener-s-journal-WDzYjmUvuMvm4G42ARmija
+- <img width="1039" alt="ERB" src="https://user-images.githubusercontent.com/71468425/106154564-5c0e2280-6145-11eb-88b2-9a4161672bb3.png">
+> Link:  https://whimsical.com/gardener-s-journal-WDzYjmUvuMvm4G42ARmija
+
 
 <br>
 
