@@ -1,7 +1,7 @@
 # The-Gardener's-Journal
 ## Overview
 
-_`The Gardener's Journal ` is a place to collect and organize all of your gardening information:  details, plans, dreams and aspirations!_
+_The **Gardener's Journal**_   _is a place to collect and organize all of your gardening information:  details, plans, dreams and aspirations!_
 
 
 <br>
@@ -9,7 +9,7 @@ _`The Gardener's Journal ` is a place to collect and organize all of your garden
 ## MVP
 
 
-### for  _The **Gardener's Journal**_  I will:
+### for  The **Gardener's Journal**  I will:
 
 - Have a **RESTful JSON API**.
   - Build a **Ruby on Rails** server, exposing RESTful JSON endpoints.
@@ -149,15 +149,18 @@ client/src
 
 #### Time Estimates
 
-> Use this section to estimate the time necessary to build out each of the components you've described above.
+>
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
+| Back-end development   |    H     |     10 hrs      |    - hrs     |    - hrs    |
+| Front-end setup|    H     |     10 hrs      |     - hrs     |     - hrs     |
+| Front-end full CRUD|    H     |     10 hrs      |     - hrs     |     - hrs     |
+| Styling |    H     |     10 hrs      |     - hrs     |     - hrs     |
+| TOTAL               |          |     40 hrs      |     - hrs     |     - hrs     |
 
-> _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
+> 
+
 
 <br>
 
