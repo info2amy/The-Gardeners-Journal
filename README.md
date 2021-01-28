@@ -1,7 +1,7 @@
 # The-Gardener's-Journal
 ## Overview
 
-_**The Gardener's Journal** is a place to orgainize all of your 
+_**The Gardener's Journal** is a place to organize all of your ._
 
 
 <br>
@@ -92,9 +92,8 @@ src
 
 #### Component Tree
 
-> Use this section to include a link to your component tree.
+> https://lucid.app/lucidchart/invitations/accept/0f5293f0-7a84-49dd-b37d-2483aa432188
 
-[Component tree](url)
 
 #### Time Estimates
 
@@ -114,7 +113,7 @@ src
 
 #### ERD Model
 
-> Use this section to display an image of a computer generated ERD model. You can use draw.io, Lucidchart or another ERD tool.
+> https://whimsical.com/gardener-s-journal-WDzYjmUvuMvm4G42ARmija
 
 <br>
 
