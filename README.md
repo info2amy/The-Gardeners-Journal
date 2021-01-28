@@ -1,7 +1,7 @@
 # The-Gardener's-Journal
 ## Overview
 
-_The **Gardener's Journal**_   _is a place to collect and organize all of your gardening information:  details, plans, dreams and aspirations!_
+### _The **Gardener's Journal**_   _is a place to collect and organize all of your gardening information:  plant details, bed layouts, plans, dreams and aspirations!_
 
 
 <br>
@@ -65,7 +65,7 @@ _The **Gardener's Journal**_   _is a place to collect and organize all of your g
 
 <br>
 
-### Libraries and Dependencies
+<!-- ### Libraries and Dependencies
 
 > Use this section to list all supporting libraries and dependencies, and their role in the project. Below is an example - this needs to be replaced!
 
@@ -79,7 +79,7 @@ _The **Gardener's Journal**_   _is a place to collect and organize all of your g
 | Axios            | _Lorem ipsum dolor sit amet, consectetur._ |
 | Ruby            | _Lorem ipsum dolor sit amet, consectetur._ |
 | Rail            | _Lorem ipsum dolor sit amet, consectetur._ |
-| JWT            | _Lorem ipsum dolor sit amet, consectetur._ |
+| JWT            | _Lorem ipsum dolor sit amet, consectetur._ | -->
 
 <br>
 
@@ -98,9 +98,10 @@ Link: https://lucid.app/lucidchart/invitations/accept/5c01b19c-5041-42f3-8038-64
 
 <br>
 
-Portrait (Mobile) Wireframe
+Portrait (Mobile) Wireframe example
+<img width="1119" alt="Mobile Wireframe" src="https://user-images.githubusercontent.com/71468425/106200785-2422d180-617d-11eb-8904-f56ff40aa286.png">
 
-Link: https:
+Link: https: https://lucid.app/lucidchart/invitations/accept/30767912-c9b1-4587-accc-306f158aeb06
 
 <br>
 
