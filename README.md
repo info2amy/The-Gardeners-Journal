@@ -9,7 +9,7 @@ _**The Gardener's Journal** is a place to organize all of your ._
 ## MVP
 
 
-for  _The **Gardener's Journal**._  I will:
+### for  _The **Gardener's Journal**_  I will:
 
 - Have a **RESTful JSON API**.
   - Build a **Ruby on Rails** server, exposing RESTful JSON endpoints.
@@ -22,36 +22,34 @@ for  _The **Gardener's Journal**._  I will:
   - Utilize functional and class React components appropriately.
   - Utilize state and props in your components efficiently.
   - Use _only_ React for DOM Manipulation.
-- Consume data from your **Ruby on Rails API**, and render that data in your components.
+- Consume data from  **Ruby on Rails API**, and render that data in components.
 - Utilize **React Router**, for client-side routing.
 - Demonstrate Full CRUD actions ( `index`, `show`, `create`, `update`, and `delete` ) on the front end.
-  - _Note that if you decide to implement Auth, your full CRUD actions must be covered amongst your non-User tables._
 
-### Styling <!-- omit in toc -->
+### Styling 
 
-- Be styled with CSS (or SCSS, if you'd prefer).
-- Use Flexbox or Grid in your layout design.
-- Implement 2 media queries for responsive design on 3 screen sizes (including desktop).
+- Styled with CSS (or learn and attempt SCSS, if time permits).
+- Use Flexbox and/or Grid in layout design.
+- Implement media queries for responsive design.
 
-### Linting <!-- omit in toc -->
+### Linting 
 
 - Indent properly.
 - Utilize high-quality, semantic variable names.
 - Follow `camelCase`, `snake_case`, and `kebab-case` convention.
 - Remove unnecessary boilerplate React files and code.
-- Remove all `console.log()`s and commented out code (functional notes and comments are okay).
+- Remove commented out code; leave only functional notes and comments.
 
-### Deployment <!-- omit in toc -->
+### Deployment
 
-- Deploy the fully functional front-end via Surge or Netlify.
+- Deploy the fully functional front-end via Netlify.
 - Deploy the back-end via Heroku.
-- Deploy early and often(this will help to debug small issues before they become large issues)
 
-### Procedural <!-- omit in toc -->
+### Procedural 
 
-- Initialize a **git repo on Github**, with a link to your hosted project.
-- Have **frequent commits**, making a _robust_ commit history at least every day. (75 commits minimum)
-- Use effective and safe **branching and merging** processes.
+- Initialize a git repo on Github**, with a link to the hosted project.
+- Create a Development Branch, and make frequent commits
+- Use effective and safe branching and merging processes.
 
 
 
@@ -59,11 +57,11 @@ for  _The **Gardener's Journal**._  I will:
 
 ### Goals
 
-- _Lorem ipsum, dolor sit amet,_
-- _consectetur adipiscing elit._
-- _Phasellus dapibus fermentum risus vitae bibendum._
-- _Integer vel ipsum mollis odio sollicitudin ornare eu vel ex._
-- _etc._
+- _Back-end setup, with full CRUD, day one;_
+- _Front-end setup, day two;_
+- _Front-end full CRUD, day three;_
+- _Styling and optional Post MVPs, day four;_
+- _Present, day five._
 
 <br>
 
@@ -107,7 +105,7 @@ Link: https:
 <br>
 
 #### Component Tree
-- <img width="1030" alt="Component Tree" src="https://user-images.githubusercontent.com/71468425/106159550-86aeaa00-614a-11eb-9b42-4fe6c7e07900.png">
+<img width="1030" alt="Component Tree" src="https://user-images.githubusercontent.com/71468425/106159550-86aeaa00-614a-11eb-9b42-4fe6c7e07900.png">
 
 
 <br>
@@ -153,7 +151,7 @@ src
 
 #### ERD Model
 
-- <img width="1039" alt="ERB" src="https://user-images.githubusercontent.com/71468425/106154564-5c0e2280-6145-11eb-88b2-9a4161672bb3.png">
+<img width="1039" alt="ERB" src="https://user-images.githubusercontent.com/71468425/106154564-5c0e2280-6145-11eb-88b2-9a4161672bb3.png">
 > Link:  https://whimsical.com/gardener-s-journal-WDzYjmUvuMvm4G42ARmija
 
 
@@ -169,8 +167,8 @@ src
 
 ## Code Showcase
 
-> Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
+> TBD
 
 ## Code Issues & Resolutions
 
-> Use this section to list of all major issues encountered and their resolution.
+> TBD
