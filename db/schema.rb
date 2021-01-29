@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_29_002653) do
+ActiveRecord::Schema.define(version: 2021_01_29_151319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2021_01_29_002653) do
     t.string "name"
     t.bigint "user_id", null: false
     t.string "image_url"
-    t.string "type"
+    t.string "plant_type"
     t.boolean "deciduous"
     t.string "bloom_time"
     t.string "watering"
