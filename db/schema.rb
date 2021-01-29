@@ -10,10 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_28_220726) do
+ActiveRecord::Schema.define(version: 2021_01_29_002653) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "plants", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id", null: false
+    t.string "image_url"
+    t.string "type"
+    t.boolean "deciduous"
+    t.string "bloom_time"
+    t.string "watering"
+    t.string "pruning"
+    t.string "fertilizing"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_plants_on_user_id"
+  end
+
+  create_table "plants_zones", id: false, force: :cascade do |t|
+    t.bigint "plant_id", null: false
+    t.bigint "zone_id", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
@@ -23,4 +43,11 @@ ActiveRecord::Schema.define(version: 2021_01_28_220726) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "zones", force: :cascade do |t|
+    t.integer "zone"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "plants", "users"
 end
