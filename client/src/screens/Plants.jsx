@@ -11,6 +11,8 @@ export default function Plants(props) {
         <React.Fragment key={plant.id}>
           <Link to={`/plants/${plant.id}`}>
             {/* - - - ADD PLANT IMAGE HERE - - - -  */}
+            <img src={plant.image_url} alt="asti"/>
+            <p>{plant.image_url}</p>
             <p>{plant.name}</p>
           </Link>
           {currentUser?.id === plant.user_id && (

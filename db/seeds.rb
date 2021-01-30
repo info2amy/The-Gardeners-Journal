@@ -14,7 +14,7 @@ User.destroy_all
 
 puts "#{User.count} users created."
 
-@astilbe = Plant.create!(name: "astilbe", user_id: 1, user_id: 1, plant_type: "flower", bloom_time: "BB", image_url: "YYY")
+@astilbe = Plant.create!(name: "Astilbe", user_id: 1, user_id: 1, plant_type: "flower", bloom_time: "BB", image_url: "https://www.americanmeadows.com/media/wysiwyg/a/s/astilbe_key_west_1of2.jpg")
 @daisy = Plant.create!(name: "daisy", user_id: 1, plant_type: "flower", bloom_time: "BB", image_url: "YYY")
 @begonia = Plant.create!(name: "begonia", user_id: 1, plant_type: "flower", bloom_time: "BB", image_url: "YYY")
 @bleeding_heart = Plant.create!(name: "bleeding_heart", user_id: 1, plant_type: "flower", bloom_time: "BB", image_url: "YYY")
