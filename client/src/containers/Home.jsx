@@ -3,6 +3,7 @@ import { useHistory, Switch, Route } from "react-router-dom";
 import Zones from "../screens/Zones";
 import { getAllZones } from "../services/zones";
 import Plants from "../screens/Plants";
+import { getAllPlants } from "../services/plants";
 
 export default function Home(props) {
   const [zones, setZones] = useState([]);
@@ -16,6 +17,14 @@ export default function Home(props) {
       setZones(zoneData);
     };
     fetchZones();
+  }, []);
+
+  useEffect(() => {
+    const fetchPlants = async () => {
+      const plantData = await getAllPlants();
+      setPlants(plantData);
+    };
+    fetchPlants();
   }, []);
 
   return (

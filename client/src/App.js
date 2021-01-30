@@ -4,7 +4,6 @@ import Layout from './layouts/Layout';
 import Register from './screens/Register';
 import Login from "./screens/Login";
 import Home from "./containers/Home";
-
 import { loginUser, registerUser, verifyUser, removeToken } from './services/auth';
 
 function App() {
@@ -47,7 +46,7 @@ const handleLogout = () => {
           <Register handleRegister={handleRegister}/>
         </Route>
         <Route path='/'>
-          <Home />
+          <Home currentUser={currentUser}/>
         </Route>
       </Switch>
     </Layout>
