@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { useHistory, Switch, Route } from "react-router-dom";
-import Zones from "./screens/Zones";
+import Zones from "../screens/Zones";
 import { getAllZones } from "../services/zones";
 
 export default function Home(props) {
@@ -10,7 +10,7 @@ export default function Home(props) {
   const { currentUser } = props;
 
   useEffect(() => {
-    const fetchZoness = async () => {
+    const fetchZones = async () => {
       const zoneData = await getAllZones();
       setZones(zoneData);
     };

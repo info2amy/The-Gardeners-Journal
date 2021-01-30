@@ -46,6 +46,9 @@ const handleLogout = () => {
         <Route path='/register'>
           <Register handleRegister={handleRegister}/>
         </Route>
+        <Route path='/'>
+          <Home />
+        </Route>
       </Switch>
     </Layout>
   );
