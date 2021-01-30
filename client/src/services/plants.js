@@ -20,8 +20,9 @@ export const deletePlant = async (id) => {
   return resp.data;
 }
 
-// export const getAllPlants = async () => {
-//   const resp = await api.get('/plants');
-//   return resp.data;
-// }
-
+// export const editPlant = async () => {
+  //   const resp = await api.put('/plants');
+  //   return resp.data;
+  // }
+  
+  

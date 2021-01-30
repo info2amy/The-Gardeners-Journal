@@ -5,6 +5,7 @@ import { getAllZones } from "../services/zones";
 import Plants from "../screens/Plants";
 import { getAllPlants, postPlant, deletePlant } from "../services/plants";
 import CreatePlant from "../screens/CreatePlant";
+import DetailPlant from "../screens/DetailPlant";
 
 export default function Home(props) {
   const [zones, setZones] = useState([]);
@@ -45,6 +46,10 @@ export default function Home(props) {
     <Switch>
       <Route path="/zones">
         <Zones zones={zones} />
+      </Route>
+      <Route path="/plants/:id">
+        <DetailPlant
+          zones={zones} />
       </Route>
       <Route path="/plants/new">
         <CreatePlant

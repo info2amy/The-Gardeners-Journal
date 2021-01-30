@@ -5,10 +5,12 @@ export default function Plants(props) {
   const { plants, currentUser, handleDelete } = props;
   return (
     <div>
-      <h3>Plants</h3>
+      <h3>Plants, Bushes, Trees</h3>
+      <h4>Click on a plant for detailed information.</h4>
       {plants.map((plant) => (
         <React.Fragment key={plant.id}>
           <Link to={`/plants/${plant.id}`}>
+            {/* - - - ADD PLANT IMAGE HERE - - - -  */}
             <p>{plant.name}</p>
           </Link>
           {currentUser?.id === plant.user_id && (
