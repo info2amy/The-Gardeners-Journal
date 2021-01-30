@@ -3,7 +3,7 @@ import { useHistory, Switch, Route } from "react-router-dom";
 import Zones from "../screens/Zones";
 import { getAllZones } from "../services/zones";
 import Plants from "../screens/Plants";
-import { getAllPlants, postPlant } from "../services/plants";
+import { getAllPlants, postPlant, deletePlant } from "../services/plants";
 import CreatePlant from "../screens/CreatePlant";
 
 export default function Home(props) {
@@ -34,6 +34,13 @@ export default function Home(props) {
     history.push("/plants");
   };
 
+  const handleDelete = async (id) => {
+    await deletePlant(id);
+    setPlants(prevState => prevState.filter(plantItem => {
+      return plantItem.id !== id
+    }))
+}
+
   return (
     <Switch>
       <Route path="/zones">
@@ -46,7 +53,7 @@ export default function Home(props) {
       <Route path="/plants">
         <Plants
           plants={plants}
-          // handleDelete={handleDelete}
+          handleDelete={handleDelete}
           currentUser={currentUser} />
       </Route>
     </Switch>
