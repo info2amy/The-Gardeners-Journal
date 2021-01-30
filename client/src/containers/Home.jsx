@@ -3,7 +3,7 @@ import { useHistory, Switch, Route } from "react-router-dom";
 import Zones from "../screens/Zones";
 import { getAllZones } from "../services/zones";
 import Plants from "../screens/Plants";
-import { getAllPlants } from "../services/plants";
+import { getAllPlants, postPlant } from "../services/plants";
 
 export default function Home(props) {
   const [zones, setZones] = useState([]);
@@ -26,6 +26,12 @@ export default function Home(props) {
     };
     fetchPlants();
   }, []);
+
+  const handleCreate = async () => {
+    const newPlant = await postPlant(plantData);
+    setPlants((prevState) => [...prevState, newPlant]);
+    history.push("/plants");
+  };
 
   return (
     <Switch>
