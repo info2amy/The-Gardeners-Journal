@@ -4,6 +4,7 @@ import Zones from "../screens/Zones";
 import { getAllZones } from "../services/zones";
 import Plants from "../screens/Plants";
 import { getAllPlants, postPlant } from "../services/plants";
+import CreatePlant from "../screens/CreatePlant";
 
 export default function Home(props) {
   const [zones, setZones] = useState([]);
@@ -27,7 +28,7 @@ export default function Home(props) {
     fetchPlants();
   }, []);
 
-  const handleCreate = async () => {
+  const handleCreate = async (plantData) => {
     const newPlant = await postPlant(plantData);
     setPlants((prevState) => [...prevState, newPlant]);
     history.push("/plants");
@@ -38,12 +39,15 @@ export default function Home(props) {
       <Route path="/zones">
         <Zones zones={zones} />
       </Route>
+      <Route path="/plants/new">
+        <CreatePlant
+          handleCreate={handleCreate} />
+      </Route>
       <Route path="/plants">
         <Plants
           plants={plants}
           // handleDelete={handleDelete}
-          currentUser={currentUser}
-        />
+          currentUser={currentUser} />
       </Route>
     </Switch>
   );
