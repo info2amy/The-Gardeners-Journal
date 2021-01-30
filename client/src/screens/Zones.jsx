@@ -7,8 +7,8 @@ export default function Zones() {
 // ))
   return (
     <div>
-      <h3>U. S. Horticultural Hardiness Zones</h3>;
+      <h3>U. S. Horticultural Hardiness Zones</h3>
       <img src={ZoneMap} alt="Zones map" />
-      <p>Select your Zone: </p>
+      {/* <p>Select your Zone: </p> */}
     </div>)
 }

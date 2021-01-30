@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default function Layout(props) {
   const { currentUser, handleLogout } = props;
@@ -12,17 +12,17 @@ export default function Layout(props) {
             <button onClick={handleLogout}>Logout</button>
           </>
         ) : (
-          <Link to='/login'>Login/Register</Link>
+          <Link to="/login">Login/Register</Link>
         )}
       </header>
 
       {currentUser && (
         <>
-          <Link to='/plants'>Plants</Link>
-          <Link to='/zones'>/Zones</Link>
+          <Link to="/plants">Plants</Link>
+          <Link to="/zones">/Zones</Link>
         </>
       )}
       {props.children}
     </div>
-  )
+  );
 }
