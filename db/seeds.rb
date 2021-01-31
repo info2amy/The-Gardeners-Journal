@@ -47,16 +47,16 @@ puts "#{User.count} users created."
 @boxwood = Plant.create!(name: "Boxwood", user_id: 1, plant_type: "bush", bloom_time: "BB", image_url: "https://cdn.shopify.com/s/files/1/0062/8532/8445/products/English_Boxwood_1_BB_1024x1024.jpg?v=1602788338")
 @azalea = Plant.create!(name: "Azalea", user_id: 1, plant_type: "bush", bloom_time: "BB", image_url: "https://terra4incognita.files.wordpress.com/2008/05/100_9790sm.jpg")
 
-@japanese_maple = Plant.create!(name: "Japanese_Maple", user_id: 1, plant_type: "tree", bloom_time: "BB", image_url: "YYY")
-@cypress = Plant.create!(name: "cypress", user_id: 1, plant_type: "tree", bloom_time: "BB", image_url: "YYY")
-@black_gum = Plant.create!(name: "black_gum", user_id: 1, plant_type: "tree", bloom_time: "BB", image_url: "YYY")
-@magnolia = Plant.create!(name: "magnolia", user_id: 1, plant_type: "tree", bloom_time: "BB", image_url: "YYY")
-@arborvitae = Plant.create!(name: "arborvitae", user_id: 1, plant_type: "tree", bloom_time: "BB", image_url: "YYY")
-@crabapple = Plant.create!(name: "crabapple", user_id: 1, plant_type: "tree", bloom_time: "BB", image_url: "YYY")
-@crapemyrtle = Plant.create!(name: "crapemyrtle", user_id: 1, plant_type: "tree", bloom_time: "BB", image_url: "YYY")
-@willow = Plant.create!(name: "willow", user_id: 1, plant_type: "tree", bloom_time: "BB", image_url: "YYY")
-@spruce = Plant.create!(name: "spruce", user_id: 1, plant_type: "tree", bloom_time: "BB", image_url: "YYY")
-@redbud = Plant.create!(name: "redbud", user_id: 1, plant_type: "tree", bloom_time: "BB", image_url: "YYY")
+@japanese_maple = Plant.create!(name: "Japanese_Maple", user_id: 1, plant_type: "tree", bloom_time: "BB", image_url: "https://i.etsystatic.com/23754746/r/il/8514e2/2710452923/il_1588xN.2710452923_aq7p.jpg")
+@cypress = Plant.create!(name: "Cypress", user_id: 1, plant_type: "tree", bloom_time: "BB", image_url: "https://images-na.ssl-images-amazon.com/images/I/81CMfWJpogL._AC_SY450_.jpg")
+@black_gum = Plant.create!(name: "Black_Gum", user_id: 1, plant_type: "tree", bloom_time: "BB", image_url: "https://i.pinimg.com/originals/de/25/b7/de25b7ba38d5138a8c4e1e6fb3251b8f.jpg")
+@magnolia = Plant.create!(name: "Magnolia", user_id: 1, plant_type: "tree", bloom_time: "BB", image_url: "https://i.pinimg.com/originals/28/54/e5/2854e53f2a44bf3334da07effd4cef0f.jpg")
+@arborvitae = Plant.create!(name: "Arborvitae", user_id: 1, plant_type: "tree", bloom_time: "BB", image_url: "https://i.pinimg.com/236x/a9/0c/f0/a90cf0c22bfd6142905ac513eb625ed3.jpg")
+@crabapple = Plant.create!(name: "Crabapple", user_id: 1, plant_type: "tree", bloom_time: "BB", image_url: "https://www.thetreecenter.com/c/uploads/crab-flowering-profusion-1.jpg")
+@crapemyrtle = Plant.create!(name: "Crapemyrtle", user_id: 1, plant_type: "tree", bloom_time: "BB", image_url: "https://cdn.shopify.com/s/files/1/0062/8532/8445/products/Pnk_Velour_Crape_Myrtle_1_BB_1024x1024.jpg?v=1590779910")
+@willow = Plant.create!(name: "Willow", user_id: 1, plant_type: "tree", bloom_time: "BB", image_url: "https://nwaplantsinc.com/wp-content/uploads/2020/04/weepingwillow.jpg")
+@blue_spruce = Plant.create!(name: "Blue_Spruce", user_id: 1, plant_type: "tree", bloom_time: "BB", image_url: "https://www.countylinenursery.net/uploads/7/4/9/3/74938711/s346013446412642482_p675_i3_w1280.jpeg")
+@redbud = Plant.create!(name: "Redbud", user_id: 1, plant_type: "tree", bloom_time: "BB", image_url: "https://www.naturehills.com/media/catalog/product/cache/35c1080e597d6a74b42d0d88ced836c1/e/a/eastern-redbud-group.jpg")
 
 puts "#{Plant.count} plants created."
 
