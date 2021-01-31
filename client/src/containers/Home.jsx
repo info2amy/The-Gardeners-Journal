@@ -3,9 +3,15 @@ import { useHistory, Switch, Route } from "react-router-dom";
 import Zones from "../screens/Zones";
 import { getAllZones } from "../services/zones";
 import Plants from "../screens/Plants";
-import { getAllPlants, postPlant, deletePlant } from "../services/plants";
+import {
+  getAllPlants,
+  postPlant,
+  deletePlant,
+  editPlant,
+} from "../services/plants";
 import CreatePlant from "../screens/CreatePlant";
 import DetailPlant from "../screens/DetailPlant";
+import EditPlant from "../screens/EditPlant";
 
 export default function Home(props) {
   const [zones, setZones] = useState([]);
@@ -37,29 +43,42 @@ export default function Home(props) {
 
   const handleDelete = async (id) => {
     await deletePlant(id);
-    setPlants(prevState => prevState.filter(plantItem => {
-      return plantItem.id !== id
-    }))
-}
+    setPlants((prevState) =>
+      prevState.filter((plantItem) => {
+        return plantItem.id !== id;
+      })
+    );
+  };
+
+  const handleUpdate = async (id, plantData) => {
+    const updatedPlant = await editPlant(id, plantData);
+    setPlants((prevState) =>
+      prevState.map((plantItem) => {
+        return plantItem.id === Number(id) ? updatedPlant : plantItem;
+      }))
+    history.push('/plants')
+  };
 
   return (
     <Switch>
       <Route path="/zones">
         <Zones zones={zones} />
       </Route>
+      <Route path="/plants/:id/edit">
+        <EditPlant plants={plants} handleUpdate={handleUpdate} />
+      </Route>
       <Route path="/plants/:id">
-        <DetailPlant
-          zones={zones} />
+        <DetailPlant zones={zones} />
       </Route>
       <Route path="/plants/new">
-        <CreatePlant
-          handleCreate={handleCreate} />
+        <CreatePlant handleCreate={handleCreate} />
       </Route>
       <Route path="/plants">
         <Plants
           plants={plants}
           handleDelete={handleDelete}
-          currentUser={currentUser} />
+          currentUser={currentUser}
+        />
       </Route>
     </Switch>
   );
