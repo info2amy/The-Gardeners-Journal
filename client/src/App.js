@@ -3,7 +3,7 @@ import { Switch, useHistory, Route } from 'react-router-dom';
 import Layout from './layouts/Layout';
 import Register from './screens/Register';
 import Login from "./screens/Login";
-import Home from "./containers/Home";
+import Home from "./containers/MainCon";
 import { loginUser, registerUser, verifyUser, removeToken } from './services/auth';
 
 function App() {
@@ -34,6 +34,7 @@ const handleLogout = () => {
   setCurrentUser(null);
   localStorage.removeItem('authToken');
   removeToken();
+  history.push('/')
 }
 
   return (

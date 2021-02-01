@@ -24,10 +24,10 @@ export default function Plants(props) {
               <Link to={`/plants/${plant.id}/edit`}>
                 <button>Edit</button>
               </Link>
-              {/* <button onClick={() =>
-                handleDelete(plant.id)}>Delete</button> */}
-            </>
+              <br/>
+            </> 
           )}
+          <br/> <br/>
         </React.Fragment>
       ))}
       <br />
