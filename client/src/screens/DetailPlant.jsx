@@ -7,6 +7,7 @@ export default function DetailPlant(props) {
   const [plantItem, setPlantItem] = useState(null);
   const [zoneID, setZoneID] = useState("");
   const { id } = useParams();
+  // const { plants } = props;
 
   useEffect(() => {
     const fetchPlantItem = async () => {
@@ -35,6 +36,9 @@ export default function DetailPlant(props) {
   return (
     <div>
       <h3>{plantItem?.name}</h3>
+      {/* {plants.map((plant) => (
+        <img src={plant.image_url} alt="plantimage"/>      )
+      )} */}
       {plantItem?.zones.map((zone) => (
         <p key={zone.id}>{zone.zone}</p>
       ))}

@@ -7,10 +7,16 @@ export default function Plants(props) {
     <div>
       <h3>Plants, Bushes, Trees</h3>
       <h4>Click on a plant for detailed information.</h4>
+
+      <Link to="/plants/new">
+        <button>Add a new plant, bush or tree</button>
+      </Link> <br/>
+
+
       {plants.map((plant) => (
         <React.Fragment key={plant.id}>
           <Link to={`/plants/${plant.id}`}>
-            <img src={plant.image_url} alt="asti"/>
+            <img src={plant.image_url} alt="plantimage"/>
             <p>{plant.name}</p>
           </Link>
           {currentUser?.id === plant.user_id && (
@@ -18,17 +24,17 @@ export default function Plants(props) {
               <Link to={`/plants/${plant.id}/edit`}>
                 <button>Edit</button>
               </Link>
-              <button onClick={() =>
-                handleDelete(plant.id)}>Delete</button>
+              {/* <button onClick={() =>
+                handleDelete(plant.id)}>Delete</button> */}
             </>
           )}
         </React.Fragment>
       ))}
       <br />
       <br/>
-      <Link to="/plants/new">
-        <button>Create a plant, bush or tree</button>
-      </Link>
+      {/* <Link to="/plants/new">
+        <button>Add a new plant, bush or tree</button>
+      </Link> */}
     </div>
   );
 }

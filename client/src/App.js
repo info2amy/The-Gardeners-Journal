@@ -38,6 +38,8 @@ const handleLogout = () => {
 
   return (
     <Layout currentUser={currentUser} handleLogout={handleLogout}>
+      <h1>WELCOME!</h1>
+      <h3>Please login or register</h3>
       <Switch>
         <Route path='/login'>
           <Login handleLogin={handleLogin} />

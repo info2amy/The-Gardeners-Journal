@@ -43,9 +43,10 @@ export default function Home(props) {
 
   const handleDelete = async (id) => {
     await deletePlant(id);
+    history.push("/plants")
     setPlants((prevState) =>
       prevState.filter((plantItem) => {
-        return plantItem.id !== id;
+        return plantItem.id !== Number(id);
       })
     );
   };
@@ -53,32 +54,31 @@ export default function Home(props) {
   const handleUpdate = async (id, plantData) => {
     const updatedPlant = await editPlant(id, plantData);
     setPlants((prevState) =>
-      prevState.map((plantItem) => {
-        return plantItem.id === Number(id) ? updatedPlant : plantItem;
-      }))
-    history.push('/plants')
+    prevState.map((plantItem) => {
+      return plantItem.id === Number(id) ? updatedPlant : plantItem;
+    }))
+    history.push("/plants")
   };
 
   return (
     <Switch>
-      <Route path="/zones">
-        <Zones zones={zones} />
+      <Route path="/plants/new">
+        <CreatePlant handleCreate={handleCreate} />
       </Route>
       <Route path="/plants/:id/edit">
-        <EditPlant plants={plants} handleUpdate={handleUpdate} />
+        <EditPlant plants={plants} handleUpdate={handleUpdate} handleDelete={handleDelete} />
       </Route>
       <Route path="/plants/:id">
         <DetailPlant zones={zones} />
-      </Route>
-      <Route path="/plants/new">
-        <CreatePlant handleCreate={handleCreate} />
       </Route>
       <Route path="/plants">
         <Plants
           plants={plants}
           handleDelete={handleDelete}
-          currentUser={currentUser}
-        />
+          currentUser={currentUser} />
+      </Route>
+      <Route path="/zones">
+        <Zones zones={zones} />
       </Route>
     </Switch>
   );
