@@ -35,13 +35,15 @@ export default function DetailPlant(props) {
 
   return (
     <div>
-      <h3>{plantItem?.name}</h3>
-      {/* {plants.map((plant) => (
-        <img src={plant.image_url} alt="plantimage"/>      )
-      )} */}
+      <h2>{plantItem?.name}</h2>
+      <h3>{plantItem?.name} blooms in {plantItem?.bloom_time}</h3>
+      <h3>{plantItem?.plant_type}</h3>
+      <img src={plantItem?.image_url} alt='plant pic' />
+      
       {plantItem?.zones.map((zone) => (
-        <p key={zone.id}>{zone.zone}</p>
+        <p key={zone.id}> {plantItem?.name} grows best in zone {zone.zone}</p>
       ))}
+
       <form onSubmit={handleSubmit}>
         <select defaultValue="default" onChange={handleChange}>
           {/* we can set a default value to tell people to select a zone*/}
