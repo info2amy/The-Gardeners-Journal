@@ -5,9 +5,10 @@ export default function EditPlant(props) {
   const [formData, setFormData] = useState({
     name: "",
     image_url: "",
-    plant_type: ""
+    plant_type: "",
+    bloom_time: ""
   });
-  const { name, image_url, plant_type } = formData;
+  const { name, image_url, plant_type, bloom_time } = formData;
   const { plants, handleUpdate, handleDelete } = props;
   const { id } = useParams();
 
@@ -20,6 +21,7 @@ export default function EditPlant(props) {
         name: plantItem.name,
         image_url: plantItem.image_url,
         plant_type: plantItem.plant_type,
+        bloom_time: plantItem.bloom_time,
       });
     };
     if (plants.length) {
@@ -46,14 +48,26 @@ export default function EditPlant(props) {
       <label>
         Update Plant Name:
         <input type="text" name="name" value={name} onChange={handleChange} />
-      </label>
-      <br/>
+      </label> <br/> <br/>
       <label>
         Update Plant Image:
         <input type="text" name="image_url" placeholder="enter image url" value={image_url} onChange={handleChange} />
+      </label> <br/> <br/>
+
+      <label>
+        Update Plant type:
+        <input type="text" name="plant_type" placeholder="flower, bush or tree" value={plant_type}
+        onChange={handleChange} />
+      </label> <br /> <br />
+
+      <label>
+        Update Bloom time:
+        <input type="text" name="bloom_time" value={bloom_time} onChange={handleChange} />
       </label>
+      <br /> <br /> <br />
+
+
       <br />
-      <br/>
       <button>Submit Changes</button>
       <br />
       <br />
