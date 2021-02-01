@@ -19,10 +19,11 @@ export default function Plants(props) {
             <img src={plant.image_url} alt="plantimage"/>
             <p>{plant.name}</p>
           </Link>
+            <p>{plant.name} blooms in {plant.bloom_time}</p>
           {currentUser?.id === plant.user_id && (
             <>
               <Link to={`/plants/${plant.id}/edit`}>
-                <button>Edit</button>
+                <button>Edit this information</button>
               </Link>
               <br/>
             </> 

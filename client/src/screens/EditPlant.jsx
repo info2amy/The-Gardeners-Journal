@@ -55,7 +55,7 @@ export default function EditPlant(props) {
       </label> <br/> <br/>
 
       <label>
-        Update Plant type:
+        Update Plant type (for sorting):
         <input type="text" name="plant_type" placeholder="flower, bush or tree" value={plant_type}
         onChange={handleChange} />
       </label> <br /> <br />
