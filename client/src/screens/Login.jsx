@@ -1,5 +1,5 @@
-import { React, useState } from "react";
-import { Link } from "react-router-dom";
+import {React, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 export default function Login(props) {
   const [formData, setFormData] = useState({
@@ -14,8 +14,8 @@ export default function Login(props) {
     setFormData((prevState) => ({
       ...prevState,
       [name]: value,
-    }));
-  };
+  }));
+  }
 
   return (
     <form
@@ -24,6 +24,9 @@ export default function Login(props) {
         handleLogin(formData);
       }}
     >
+      <br />
+      <Link to="/register">New User? Register here</Link>
+      <br /> <br />
       <h3>Login</h3>
       <label>
         Username:
@@ -34,7 +37,7 @@ export default function Login(props) {
           onChange={handleChange}
         />
       </label>
-      <br />
+      <br /> <br />
       <label>
         Password:
         <input
@@ -44,8 +47,10 @@ export default function Login(props) {
           onChange={handleChange}
         />
       </label>
+      <br /> <br /> <br /> 
       <button>Submit</button>
-      <Link to="/register">New User? Register here</Link>
+      <br />
+      {/* <Link to="/register">New User? Register here</Link> */}
     </form>
   );
 }

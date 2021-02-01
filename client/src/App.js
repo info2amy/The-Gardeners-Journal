@@ -21,13 +21,13 @@ function App() {
   const handleLogin = async (loginData) => {
     const userData = await loginUser(loginData);
     setCurrentUser(userData);
-    history.push('/')
+    history.push('/plants')
 }
 
 const handleRegister = async (registerData) => {
   const userData = await registerUser(registerData);
   setCurrentUser(userData);
-  history.push('/')
+  history.push('/plants')
 }
 
 const handleLogout = () => {
@@ -39,7 +39,7 @@ const handleLogout = () => {
   return (
     <Layout currentUser={currentUser} handleLogout={handleLogout}>
       <h1>WELCOME!</h1>
-      <h3>Please login or register</h3>
+      <h3>Please login or register <br></br> to begin browsing Plants</h3>
       <Switch>
         <Route path='/login'>
           <Login handleLogin={handleLogin} />

@@ -22,7 +22,7 @@ export default function Register(props) {
     <form onSubmit={(e)=> {
       e.preventDefault();
       handleRegister(formData);
-    }}>
+    }}> <br />
     <h3>Register</h3>
     <label>Username:
       <input
@@ -32,7 +32,7 @@ export default function Register(props) {
         onChange={handleChange}
       />
     </label>
-    <br />
+    <br /> <br />
     <label>Email:
       <input
         type='text'
@@ -41,7 +41,7 @@ export default function Register(props) {
         onChange={handleChange}
       />
     </label>
-    <br />
+    <br /> <br />
     <label>Password:
       <input
         type='password'
@@ -50,7 +50,7 @@ export default function Register(props) {
         onChange={handleChange}
       />
     </label>
-    <br />
+    <br /> <br /> <br />
     <button>Submit</button>
     </form>
   )
