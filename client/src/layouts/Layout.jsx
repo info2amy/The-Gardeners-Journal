@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import "./Layout.css";
 
 export default function Layout(props) {
   const { currentUser, handleLogout } = props;
   return (
-    <div>
+    <div className="layout">
       <header>
         <h1>LOGO</h1>
         {currentUser ? (
@@ -18,8 +19,8 @@ export default function Layout(props) {
 
       {currentUser && (
         <>
-          <Link to="/plants">See  Plants  Gallery</Link>
-          <Link to="/zones">/See  Zones Map</Link>
+          <Link to="/plants">See Plants Gallery</Link>
+          <Link to="/zones">See Zones Map</Link>
         </>
       )}
       {props.children}

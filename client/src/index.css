@@ -10,16 +10,13 @@ body {
   /* font-family: 'Playfair Display', serif; */
   /* font-family: 'Fraunces', serif; */
   text-align: center;
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG_QvB6mPE-5Oobp4kXMvAUuFuCvHPJnU-zA&usqp=CAU");
-  background-size: cover;
+  /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG_QvB6mPE-5Oobp4kXMvAUuFuCvHPJnU-zA&usqp=CAU"); */
+  /* background-size: cover;
   background-repeat:  no-repeat;
   width: 100vw;
-  height: 100vh;
+  height: 100vh; */
 }
-img {
-  width: 50vw;
 
-}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
