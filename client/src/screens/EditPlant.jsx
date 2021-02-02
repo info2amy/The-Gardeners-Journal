@@ -27,7 +27,7 @@ export default function EditPlant(props) {
     if (plants.length) {
       prefillFormData();
     }
-  }, [plants]);
+  }, [plants, id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -45,7 +45,7 @@ export default function EditPlant(props) {
       }}
     >
       <h3>Edit Plant information:</h3>
-      <img src={image_url} alt="plant's image"/> <br/>
+      <img src={image_url} alt="plant's pic"/> <br/>
       <label>
         Update Plant Name:
         <input type="text" name="name" value={name} onChange={handleChange} />

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Plants.css";
 
 export default function Plants(props) {
-  const { plants, currentUser, handleDelete } = props;
+  const { plants, currentUser } = props;
   return (
     <div>
       <h3>Plants, Bushes, Trees</h3>
