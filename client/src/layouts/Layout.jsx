@@ -9,12 +9,12 @@ export default function Layout(props) {
   return (
     <div className="layout">
       <header>
-        <h1>LOGO</h1>
+        <h1 className='logo'>LOGO</h1>
         {currentUser ? (
-          <>
+          <div className="welcomeLogout">
             <p>Welcome, {currentUser.username}!</p>
             <button onClick={handleLogout}>Logout</button>
-          </>
+          </div>
         ) : (
           <Link to="/login">Login/Register</Link>
         )}

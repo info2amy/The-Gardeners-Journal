@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Plants.css";
 
 export default function Plants(props) {
   const { plants, currentUser, handleDelete } = props;
@@ -15,7 +16,7 @@ export default function Plants(props) {
       {plants.map((plant) => (
         <React.Fragment key={plant.id}>
           <Link to={`/plants/${plant.id}`}>
-            <img src={plant.image_url} alt="plantimage"/>
+            <img className="allImages" src={plant.image_url} alt="plantimage"/>
             <p>{plant.name}</p>
           </Link>
             <p>{plant.name} blooms in {plant.bloom_time}</p>
