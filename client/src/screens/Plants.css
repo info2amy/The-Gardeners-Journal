@@ -1,4 +1,10 @@
-.allImages {
+.plant-container {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.all-images {
   border: 3px solid black;
   box-shadow: 8px 8px 8px #302a2a99;
 }
