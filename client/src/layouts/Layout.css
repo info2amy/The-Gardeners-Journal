@@ -22,6 +22,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* justify-content: space-between; */
   position: fixed;
   top:  0;
   left: 0;
@@ -35,12 +36,36 @@ header {
 .logo {
   color:#3567e6;
   font-family: 'Fraunces', serif;
+  margin-right: 45vw;
   /* font-family: 'Great Vibes', cursive; */
 }
 
-.logbutton {
-  border: 3px solid black;
-  box-shadow: 8px 8px 8px #302a2a99
+button {
+  border: 1px solid black;
+  border-radius: 8%;
+  box-shadow: 8px 8px 8px #302a2a99;
+  transition: all 0.4s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+  color: #3567e6;
+  background-color: #a6f188;
+  font-weight: bold;
+}
+.link {
+  border: 1px solid black;
+  border-radius: 8%;
+  box-shadow: 8px 8px 8px #302a2a99;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+.link:hover {
+  transform: scale(1.1);
+  color: #3567e6;
+  background-color: #a6f188;
+  font-weight: bold;
 }
 
 .welcomeLogout p {
