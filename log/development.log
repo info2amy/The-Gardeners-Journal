@@ -9933,3 +9933,711 @@ Processing by PlantsController#index as HTML
 Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.7ms | Allocations: 6114)
 
 
+Started GET "/" for ::1 at 2021-02-01 17:12:20 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/amykumar/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/amykumar/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.8ms | Allocations: 292)
+Completed 200 OK in 23ms (Views: 14.6ms | Allocations: 1519)
+
+
+Started GET "/auth/verify" for ::1 at 2021-02-01 17:27:25 -0600
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (42.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 251ms (Views: 1.2ms | ActiveRecord: 113.9ms | Allocations: 7133)
+
+
+Started GET "/auth/verify" for ::1 at 2021-02-01 17:27:39 -0600
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 65ms (Views: 0.6ms | ActiveRecord: 2.0ms | Allocations: 703)
+
+
+Started POST "/users/" for ::1 at 2021-02-01 17:28:02 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"me", "email"=>"me@me.gmail", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "me"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "me@me.gmail"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (44.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "me"], ["email", "me@me.gmail"], ["password_digest", "$2a$12$CA4N9IoyKAUT4.rNIMWdQO9JOTmSFO.EF8wVPx22FsliSlwTmzNYK"], ["created_at", "2021-02-01 23:28:02.902206"], ["updated_at", "2021-02-01 23:28:02.902206"]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "me"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "me@me.gmail"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+Completed 201 Created in 293ms (Views: 0.2ms | ActiveRecord: 48.4ms | Allocations: 6453)
+
+
+Started GET "/zones" for ::1 at 2021-02-01 17:28:03 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Started GET "/plants" for ::1 at 2021-02-01 17:28:03 -0600
+Processing by PlantsController#index as HTML
+  [1m[36mPlant Load (52.1ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:8:in `index'
+Completed 200 OK in 72ms (Views: 19.2ms | ActiveRecord: 52.1ms | Allocations: 17463)
+
+
+Started GET "/plants/1" for ::1 at 2021-02-01 17:35:23 -0600
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlant Load (1.4ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:44:in `set_plant'
+  [1m[36mZone Load (41.6ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 1]]
+  ↳ app/controllers/plants_controller.rb:13:in `show'
+Completed 200 OK in 185ms (Views: 59.8ms | ActiveRecord: 103.1ms | Allocations: 11441)
+
+
+Started POST "/plants" for ::1 at 2021-02-01 17:36:37 -0600
+Processing by PlantsController#create as HTML
+  Parameters: {"plant"=>{"name"=>"Rachel Dahlia", "image_url"=>"https://www.lucasgreenhouses.com/_ccLib/image/plants/DETA-3541.jpg", "plant_type"=>"flower", "bloom_time"=>"Summer"}}
+[31mUnpermitted parameter: :plant_type[0m
+Completed 422 Unprocessable Entity in 33ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 3280)
+
+
+Started POST "/plants" for ::1 at 2021-02-01 17:36:41 -0600
+Processing by PlantsController#create as HTML
+  Parameters: {"plant"=>{"name"=>"Rachel Dahlia", "image_url"=>"https://www.lucasgreenhouses.com/_ccLib/image/plants/DETA-3541.jpg", "plant_type"=>"flower", "bloom_time"=>"Summer"}}
+[31mUnpermitted parameter: :plant_type[0m
+Completed 422 Unprocessable Entity in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 655)
+
+
+Started GET "/plants/1" for ::1 at 2021-02-01 17:42:08 -0600
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlant Load (0.4ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:44:in `set_plant'
+  [1m[36mZone Load (0.9ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 1]]
+  ↳ app/controllers/plants_controller.rb:13:in `show'
+Completed 200 OK in 274ms (Views: 3.1ms | ActiveRecord: 10.1ms | Allocations: 3718)
+
+
+Started GET "/plants/1" for ::1 at 2021-02-01 17:42:51 -0600
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:44:in `set_plant'
+  [1m[36mZone Load (0.4ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 1]]
+  ↳ app/controllers/plants_controller.rb:13:in `show'
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.7ms | Allocations: 1594)
+
+
+Started GET "/zones" for ::1 at 2021-02-01 17:48:28 -0600
+Started GET "/auth/verify" for ::1 at 2021-02-01 17:48:28 -0600
+Started GET "/plants/id" for ::1 at 2021-02-01 17:48:28 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Started GET "/plants" for ::1 at 2021-02-01 17:48:28 -0600
+Processing by AuthenticationController#verify as HTML
+Processing by PlantsController#index as HTML
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"id"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 18ms (Views: 1.2ms | ActiveRecord: 1.1ms | Allocations: 1876)
+
+
+  [1m[36mPlant Load (1.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:8:in `index'
+  [1m[36mPlant Load (1.1ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:44:in `set_plant'
+Completed 200 OK in 209ms (Views: 190.6ms | ActiveRecord: 17.0ms | Allocations: 25756)
+
+
+Completed 404 Not Found in 205ms (ActiveRecord: 19.6ms | Allocations: 26141)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Plant with 'id'=id):
+  
+app/controllers/plants_controller.rb:44:in `set_plant'
+Started GET "/zones" for ::1 at 2021-02-01 17:48:37 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Started GET "/plants" for ::1 at 2021-02-01 17:48:37 -0600
+Processing by PlantsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-02-01 17:48:37 -0600
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPlant Load (1.7ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 1.7ms | Allocations: 7357)
+
+
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 9.9ms | Allocations: 8735)
+
+
+Started GET "/zones" for ::1 at 2021-02-01 17:49:03 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Started GET "/plants" for ::1 at 2021-02-01 17:49:03 -0600
+Processing by PlantsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-02-01 17:49:03 -0600
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPlant Load (2.8ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 2.8ms | Allocations: 7632)
+
+
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 9374)
+
+
+Started GET "/plants/1" for ::1 at 2021-02-01 17:54:52 -0600
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlant Load (1.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:44:in `set_plant'
+  [1m[36mZone Load (0.6ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 1]]
+  ↳ app/controllers/plants_controller.rb:13:in `show'
+Completed 200 OK in 177ms (Views: 6.9ms | ActiveRecord: 10.4ms | Allocations: 3756)
+
+
+Started POST "/auth/login" for ::1 at 2021-02-01 17:58:16 -0600
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 401 Unauthorized in 194ms (Views: 0.7ms | ActiveRecord: 1.0ms | Allocations: 718)
+
+
+Started POST "/auth/login" for ::1 at 2021-02-01 17:58:18 -0600
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 401 Unauthorized in 185ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 615)
+
+
+Started POST "/auth/login" for ::1 at 2021-02-01 17:58:27 -0600
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"me", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "me"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 186ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 781)
+
+
+Started GET "/zones" for ::1 at 2021-02-01 17:58:27 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Started GET "/plants" for ::1 at 2021-02-01 17:58:27 -0600
+Processing by PlantsController#index as HTML
+  [1m[36mPlant Load (0.5ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.5ms | Allocations: 6252)
+
+
+Started GET "/zones" for ::1 at 2021-02-01 17:59:02 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Started GET "/plants" for ::1 at 2021-02-01 17:59:02 -0600
+Processing by PlantsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-02-01 17:59:02 -0600
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPlant Load (2.9ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:8:in `index'
+Completed 200 OK in 39ms (Views: 35.4ms | ActiveRecord: 2.9ms | Allocations: 12578)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 332ms (Views: 0.3ms | ActiveRecord: 83.6ms | Allocations: 23166)
+
+
+Started GET "/zones" for ::1 at 2021-02-01 17:59:22 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Started GET "/auth/verify" for ::1 at 2021-02-01 17:59:22 -0600
+Started GET "/plants" for ::1 at 2021-02-01 17:59:22 -0600
+Processing by AuthenticationController#verify as HTML
+Processing by PlantsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 1.0ms | Allocations: 1533)
+
+
+  [1m[36mPlant Load (3.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:8:in `index'
+Completed 200 OK in 53ms (Views: 49.7ms | ActiveRecord: 3.3ms | Allocations: 8126)
+
+
+Started POST "/plants" for ::1 at 2021-02-01 18:04:28 -0600
+Processing by PlantsController#create as HTML
+  Parameters: {"plant"=>{"name"=>"Rachel Dahlia", "image_url"=>"https://www.lucasgreenhouses.com/_ccLib/image/plants/DETA-3541.jpg", "plant_type"=>"flower", "bloom_time"=>"Summer"}}
+[31mUnpermitted parameter: :plant_type[0m
+Completed 422 Unprocessable Entity in 9ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 652)
+
+
+Started POST "/plants" for ::1 at 2021-02-01 18:07:20 -0600
+Processing by PlantsController#create as HTML
+  Parameters: {"plant"=>{"name"=>"Rachel Dahlia", "image_url"=>"https://www.lucasgreenhouses.com/_ccLib/image/plants/DETA-3541.jpg", "plant_type"=>"flower", "bloom_time"=>"Summer"}}
+[31mUnpermitted parameter: :plant_type[0m
+Completed 422 Unprocessable Entity in 11ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 655)
+
+
+Started POST "/plants" for ::1 at 2021-02-01 18:11:19 -0600
+Processing by PlantsController#create as HTML
+  Parameters: {"plant"=>{"name"=>"Rachel Dahlia", "image_url"=>"https://www.lucasgreenhouses.com/_ccLib/image/plants/DETA-3541.jpg", "plant_type"=>"flower", "bloom_time"=>"Summer"}}
+Completed 422 Unprocessable Entity in 53ms (Views: 1.4ms | ActiveRecord: 33.8ms | Allocations: 7180)
+
+
+Started POST "/plants" for ::1 at 2021-02-01 18:13:22 -0600
+Processing by PlantsController#create as HTML
+  Parameters: {"plant"=>{"name"=>"Rachel Dahlia", "image_url"=>"https://www.lucasgreenhouses.com/_ccLib/image/plants/DETA-3541.jpg", "plant_type"=>"flower", "bloom_time"=>"Summer"}}
+Completed 422 Unprocessable Entity in 68ms (ActiveRecord: 47.1ms | Allocations: 7129)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: User must exist):
+  
+app/controllers/plants_controller.rb:19:in `create'
+Started POST "/plants" for ::1 at 2021-02-01 18:14:41 -0600
+Processing by PlantsController#create as HTML
+  Parameters: {"plant"=>{"name"=>"Rachel Dahlia", "image_url"=>"https://www.lucasgreenhouses.com/_ccLib/image/plants/DETA-3541.jpg", "plant_type"=>"flower", "bloom_time"=>"Summer"}}
+Completed 422 Unprocessable Entity in 63ms (ActiveRecord: 7.2ms | Allocations: 7149)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: User must exist):
+  
+app/controllers/plants_controller.rb:19:in `create'
+Started GET "/" for ::1 at 2021-02-01 18:15:48 -0600
+  [1m[35m (33.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/amykumar/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/amykumar/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.6ms | Allocations: 292)
+Completed 200 OK in 11ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 1524)
+
+
+Started GET "/" for ::1 at 2021-02-01 18:15:51 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/amykumar/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/amykumar/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 17.9ms | Allocations: 183)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.0ms | Allocations: 702)
+
+
+Started GET "/plants" for ::1 at 2021-02-01 18:15:59 -0600
+Processing by PlantsController#index as HTML
+  [1m[36mPlant Load (1.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:8:in `index'
+Completed 200 OK in 33ms (Views: 15.3ms | ActiveRecord: 8.3ms | Allocations: 15141)
+
+
+Started GET "/plants" for ::1 at 2021-02-01 18:16:02 -0600
+Processing by PlantsController#index as HTML
+  [1m[36mPlant Load (0.4ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.4ms | Allocations: 6113)
+
+
+Started POST "/plants" for ::1 at 2021-02-01 18:16:06 -0600
+Processing by PlantsController#create as HTML
+  Parameters: {"plant"=>{"name"=>"Rachel Dahlia", "image_url"=>"https://www.lucasgreenhouses.com/_ccLib/image/plants/DETA-3541.jpg", "plant_type"=>"flower", "bloom_time"=>"Summer"}}
+Completed 422 Unprocessable Entity in 15ms (ActiveRecord: 0.0ms | Allocations: 3815)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: User must exist):
+  
+app/controllers/plants_controller.rb:19:in `create'
+Started POST "/plants" for ::1 at 2021-02-01 18:19:16 -0600
+Processing by PlantsController#create as HTML
+  Parameters: {"plant"=>{"name"=>"Rachel Dahlia", "image_url"=>"https://www.lucasgreenhouses.com/_ccLib/image/plants/DETA-3541.jpg", "plant_type"=>"flower", "bloom_time"=>"Summer"}}
+  [1m[36mUser Load (16.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 422 Unprocessable Entity in 166ms (ActiveRecord: 40.4ms | Allocations: 10885)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: User must exist):
+  
+app/controllers/plants_controller.rb:21:in `create'
+Started POST "/plants" for ::1 at 2021-02-01 18:20:25 -0600
+Processing by PlantsController#create as HTML
+  Parameters: {"plant"=>{"name"=>"Rachel Dahlia", "image_url"=>"https://www.lucasgreenhouses.com/_ccLib/image/plants/DETA-3541.jpg", "plant_type"=>"flower", "bloom_time"=>"Summer"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/plants_controller.rb:22:in `create'
+  [1m[36mPlant Create (37.4ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Rachel Dahlia"], ["user_id", 2], ["image_url", "https://www.lucasgreenhouses.com/_ccLib/image/plants/DETA-3541.jpg"], ["plant_type", "flower"], ["bloom_time", "Summer"], ["created_at", "2021-02-02 00:20:25.274107"], ["updated_at", "2021-02-02 00:20:25.274107"]]
+  ↳ app/controllers/plants_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/plants_controller.rb:22:in `create'
+Completed 201 Created in 75ms (Views: 1.0ms | ActiveRecord: 53.5ms | Allocations: 12123)
+
+
+Started DELETE "/plants/41" for ::1 at 2021-02-01 18:24:04 -0600
+Started DELETE "/plants/41" for ::1 at 2021-02-01 18:24:06 -0600
+Started DELETE "/plants/41" for ::1 at 2021-02-01 18:24:08 -0600
+Started DELETE "/plants/41" for ::1 at 2021-02-01 18:24:08 -0600
+Processing by PlantsController#destroy as HTML
+Processing by PlantsController#destroy as HTML
+Processing by PlantsController#destroy as HTML
+  Parameters: {"id"=>"41"}
+  Parameters: {"id"=>"41"}
+Processing by PlantsController#destroy as HTML
+  Parameters: {"id"=>"41"}
+  Parameters: {"id"=>"41"}
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/plants_controller.rb:40:in `destroy'
+  [1m[36mPlant::HABTM_Zones Destroy (456.8ms)[0m  [1m[31mDELETE FROM "plants_zones" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 41]]
+  ↳ app/controllers/plants_controller.rb:40:in `destroy'
+  [1m[36mPlant Destroy (33.2ms)[0m  [1m[31mDELETE FROM "plants" WHERE "plants"."id" = $1[0m  [["id", 41]]
+  ↳ app/controllers/plants_controller.rb:40:in `destroy'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/plants_controller.rb:40:in `destroy'
+Completed 204 No Content in 565ms (ActiveRecord: 509.5ms | Allocations: 18131)
+
+
+  [1m[36mPlant Load (7.5ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mPlant Load (2.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+Completed 404 Not Found in 620ms (ActiveRecord: 52.2ms | Allocations: 22147)
+
+
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  
+ActiveRecord::RecordNotFound (Couldn't find Plant with 'id'=41):
+  
+app/controllers/plants_controller.rb:46:in `set_plant'
+Completed 404 Not Found in 629ms (ActiveRecord: 53.9ms | Allocations: 22658)
+
+
+  [1m[36mPlant Load (19.1ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  
+ActiveRecord::RecordNotFound (Couldn't find Plant with 'id'=41):
+  
+app/controllers/plants_controller.rb:46:in `set_plant'
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+Completed 404 Not Found in 735ms (ActiveRecord: 62.5ms | Allocations: 89680)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Plant with 'id'=41):
+  
+app/controllers/plants_controller.rb:46:in `set_plant'
+Started POST "/auth/login" for ::1 at 2021-02-01 18:27:28 -0600
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"me", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "me"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 189ms (Views: 0.4ms | ActiveRecord: 1.0ms | Allocations: 941)
+
+
+Started GET "/zones" for ::1 at 2021-02-01 18:27:28 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Started GET "/plants" for ::1 at 2021-02-01 18:27:28 -0600
+Processing by PlantsController#index as HTML
+  [1m[36mPlant Load (0.6ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.6ms | Allocations: 6554)
+
+
+Started GET "/zones" for ::1 at 2021-02-01 18:29:50 -0600
+Started GET "/plants" for ::1 at 2021-02-01 18:29:50 -0600
+Started GET "/auth/verify" for ::1 at 2021-02-01 18:29:50 -0600
+Processing by PlantsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+  [1m[36mPlant Load (2.5ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+Completed 200 OK in 42ms (Views: 37.7ms | ActiveRecord: 2.5ms | Allocations: 13097)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 420ms (Views: 0.4ms | ActiveRecord: 161.5ms | Allocations: 29575)
+
+
+Started GET "/zones" for ::1 at 2021-02-01 18:30:12 -0600
+Started GET "/plants" for ::1 at 2021-02-01 18:30:12 -0600
+Started GET "/auth/verify" for ::1 at 2021-02-01 18:30:12 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Processing by PlantsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPlant Load (3.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 18ms (Views: 14.0ms | ActiveRecord: 3.0ms | Allocations: 7616)
+
+
+Completed 200 OK in 18ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 7893)
+
+
+Started GET "/zones" for ::1 at 2021-02-01 18:30:22 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Started GET "/plants" for ::1 at 2021-02-01 18:30:22 -0600
+Started GET "/auth/verify" for ::1 at 2021-02-01 18:30:22 -0600
+Processing by AuthenticationController#verify as HTML
+Processing by PlantsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 1216)
+
+
+  [1m[36mPlant Load (2.5ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+Completed 200 OK in 16ms (Views: 13.3ms | ActiveRecord: 2.5ms | Allocations: 8061)
+
+
+Started GET "/auth/verify" for ::1 at 2021-02-01 18:30:32 -0600
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 702)
+
+
+Started GET "/auth/verify" for ::1 at 2021-02-01 18:30:38 -0600
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 702)
+
+
+Started GET "/auth/verify" for ::1 at 2021-02-01 18:30:45 -0600
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 2.7ms | Allocations: 702)
+
+
+Started GET "/auth/verify" for ::1 at 2021-02-01 18:30:48 -0600
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 702)
+
+
+Started GET "/auth/verify" for ::1 at 2021-02-01 18:30:59 -0600
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 703)
+
+
+Started GET "/zones" for ::1 at 2021-02-01 18:31:27 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Started GET "/auth/verify" for ::1 at 2021-02-01 18:31:27 -0600
+Processing by AuthenticationController#verify as HTML
+Started GET "/plants" for ::1 at 2021-02-01 18:31:27 -0600
+Processing by PlantsController#index as HTML
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 3.3ms | Allocations: 2393)
+
+
+  [1m[36mPlant Load (3.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+Completed 200 OK in 23ms (Views: 18.6ms | ActiveRecord: 3.3ms | Allocations: 8179)
+
+
+Started GET "/zones" for ::1 at 2021-02-01 18:32:09 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Started GET "/auth/verify" for ::1 at 2021-02-01 18:32:09 -0600
+Started GET "/plants" for ::1 at 2021-02-01 18:32:09 -0600
+Processing by AuthenticationController#verify as HTML
+Processing by PlantsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 1576)
+
+
+  [1m[36mPlant Load (2.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+Completed 200 OK in 16ms (Views: 13.1ms | ActiveRecord: 2.2ms | Allocations: 7592)
+
+
+Started GET "/zones" for ::1 at 2021-02-01 18:32:13 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Started GET "/auth/verify" for ::1 at 2021-02-01 18:32:13 -0600
+Started GET "/plants" for ::1 at 2021-02-01 18:32:13 -0600
+Processing by AuthenticationController#verify as HTML
+Processing by PlantsController#index as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mPlant Load (3.6ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.9ms | Allocations: 5037)
+
+
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+Completed 200 OK in 19ms (Views: 15.1ms | ActiveRecord: 3.6ms | Allocations: 11646)
+
+
+Started GET "/zones" for ::1 at 2021-02-01 18:33:03 -0600
+Started GET "/plants" for ::1 at 2021-02-01 18:33:03 -0600
+Started GET "/auth/verify" for ::1 at 2021-02-01 18:33:03 -0600
+Processing by PlantsController#index as HTML
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPlant Load (7.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 53ms (Views: 42.6ms | ActiveRecord: 7.2ms | Allocations: 14977)
+
+
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 29ms (Views: 0.3ms | ActiveRecord: 3.3ms | Allocations: 9905)
+
+
+Started GET "/zones" for ::1 at 2021-02-01 18:34:09 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Started GET "/plants" for ::1 at 2021-02-01 18:34:09 -0600
+Processing by PlantsController#index as HTML
+  [1m[36mPlant Load (0.4ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.4ms | Allocations: 6095)
+
+
+Started GET "/zones" for ::1 at 2021-02-01 18:34:20 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Started GET "/plants" for ::1 at 2021-02-01 18:34:20 -0600
+Processing by PlantsController#index as HTML
+  [1m[36mPlant Load (2.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 2.0ms | Allocations: 13819)
+
+
+Started POST "/auth/login" for ::1 at 2021-02-01 18:34:41 -0600
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 179ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 782)
+
+
+Started GET "/zones" for ::1 at 2021-02-01 18:34:42 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Started GET "/plants" for ::1 at 2021-02-01 18:34:42 -0600
+Processing by PlantsController#index as HTML
+  [1m[36mPlant Load (0.6ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.6ms | Allocations: 7309)
+
+
+Started POST "/auth/login" for ::1 at 2021-02-01 18:34:55 -0600
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"me", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "me"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 177ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 783)
+
+
+Started GET "/zones" for ::1 at 2021-02-01 18:34:55 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Started GET "/plants" for ::1 at 2021-02-01 18:34:55 -0600
+Processing by PlantsController#index as HTML
+  [1m[36mPlant Load (0.5ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.5ms | Allocations: 7066)
+
+
+Started POST "/plants" for ::1 at 2021-02-01 18:39:11 -0600
+Processing by PlantsController#create as HTML
+  Parameters: {"plant"=>{"name"=>"Rachel Dahlia", "image_url"=>"https://www.lucasgreenhouses.com/_ccLib/image/plants/DETA-3541.jpg", "plant_type"=>"flower", "bloom_time"=>"Summer"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/plants_controller.rb:22:in `create'
+  [1m[36mPlant Create (42.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Rachel Dahlia"], ["user_id", 2], ["image_url", "https://www.lucasgreenhouses.com/_ccLib/image/plants/DETA-3541.jpg"], ["plant_type", "flower"], ["bloom_time", "Summer"], ["created_at", "2021-02-02 00:39:11.183235"], ["updated_at", "2021-02-02 00:39:11.183235"]]
+  ↳ app/controllers/plants_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/plants_controller.rb:22:in `create'
+Completed 201 Created in 56ms (Views: 1.1ms | ActiveRecord: 45.4ms | Allocations: 2755)
+
+
+Started DELETE "/plants/42" for ::1 at 2021-02-01 18:39:53 -0600
+Processing by PlantsController#destroy as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mPlant Load (0.4ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/plants_controller.rb:40:in `destroy'
+  [1m[36mPlant::HABTM_Zones Destroy (0.6ms)[0m  [1m[31mDELETE FROM "plants_zones" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 42]]
+  ↳ app/controllers/plants_controller.rb:40:in `destroy'
+  [1m[36mPlant Destroy (0.3ms)[0m  [1m[31mDELETE FROM "plants" WHERE "plants"."id" = $1[0m  [["id", 42]]
+  ↳ app/controllers/plants_controller.rb:40:in `destroy'
+  [1m[36mTRANSACTION (39.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/plants_controller.rb:40:in `destroy'
+Completed 204 No Content in 48ms (ActiveRecord: 41.4ms | Allocations: 2898)
+
+
+Started GET "/plants/1" for ::1 at 2021-02-01 18:40:39 -0600
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mZone Load (41.0ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 1]]
+  ↳ app/controllers/plants_controller.rb:15:in `show'
+Completed 200 OK in 102ms (Views: 50.2ms | ActiveRecord: 50.0ms | Allocations: 5548)
+
+
+Started GET "/plants/2" for ::1 at 2021-02-01 18:40:46 -0600
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mZone Load (0.5ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 2]]
+  ↳ app/controllers/plants_controller.rb:15:in `show'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.7ms | Allocations: 1530)
+
+
+Started GET "/plants/2" for ::1 at 2021-02-01 18:41:08 -0600
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mZone Load (0.3ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 2]]
+  ↳ app/controllers/plants_controller.rb:15:in `show'
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.6ms | Allocations: 1528)
+
+

@@ -39,8 +39,8 @@ const handleLogout = () => {
 
   return (
     <Layout currentUser={currentUser} handleLogout={handleLogout}>
-      <h1>WELCOME!</h1>
-      <h3>Please login or register <br></br> to begin browsing Plants</h3>
+      {currentUser ? null : (<><h1>WELCOME!</h1>
+      <h3>Please login or register <br></br> to begin browsing Plants</h3></>)}
       <Switch>
         <Route path='/login'>
           <Login handleLogin={handleLogin} />

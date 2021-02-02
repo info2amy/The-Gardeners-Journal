@@ -1,5 +1,7 @@
 class PlantsController < ApplicationController
   before_action :set_plant, only: [:show, :update, :destroy]
+  before_action :authorize_request, only: [:create, :update, :destroy]
+
 
   # GET /plants
   def index
@@ -16,7 +18,7 @@ class PlantsController < ApplicationController
   # POST /plants
   def create
     @plant = Plant.new(plant_params)
-
+    @plant.user = @current_user
     if @plant.save
       render json: @plant, status: :created, location: @plant
     else
@@ -46,6 +48,6 @@ class PlantsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def plant_params
-      params.require(:plant).permit(:name, :user_id, :image_url, :type, :deciduous, :bloom_time, :watering, :pruning, :fertilizing)
+      params.require(:plant).permit(:name, :user_id, :image_url, :plant_type, :deciduous, :bloom_time, :watering, :pruning, :fertilizing)
     end
 end

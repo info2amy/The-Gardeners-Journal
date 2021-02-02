@@ -10,7 +10,7 @@ export default function Plants(props) {
 
       <Link to="/plants/new">
         <button>Add a new plant, bush or tree</button>
-      </Link> <br/>
+      </Link> <br/> <br/>
 
 
       {plants.map((plant) => (
@@ -20,7 +20,7 @@ export default function Plants(props) {
             <p>{plant.name}</p>
           </Link>
             <p>{plant.name} blooms in {plant.bloom_time}</p>
-          {currentUser?.id === plant.user_id && (
+          {currentUser?.id  && (
             <>
               <Link to={`/plants/${plant.id}/edit`}>
                 <button>Edit this information</button>

@@ -50,7 +50,6 @@ export default function Login(props) {
       <br /> <br /> <br /> 
       <button>Submit</button>
       <br />
-      {/* <Link to="/register">New User? Register here</Link> */}
     </form>
   );
 }
