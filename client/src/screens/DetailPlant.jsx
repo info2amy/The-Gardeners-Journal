@@ -36,12 +36,12 @@ export default function DetailPlant(props) {
   return (
     <div>
       <h2>{plantItem?.name}</h2>
-      <h3>{plantItem?.name} blooms in {plantItem?.bloom_time}</h3>
-      <h3>{plantItem?.plant_type}</h3>
       <img src={plantItem?.image_url} alt='plant pic' />
+      <h3>{plantItem?.name} blooms in {plantItem?.bloom_time}</h3>
+      <h3>{plantItem?.name} is a {plantItem?.plant_type}</h3>
       
       {plantItem?.zones.map((zone) => (
-        <p key={zone.id}> {plantItem?.name} grows best in zone {zone.zone}</p>
+        <h3 key={zone.id}> {plantItem?.name} grows best in zone {zone.zone}</h3>
       ))}
 
       <form onSubmit={handleSubmit}>
