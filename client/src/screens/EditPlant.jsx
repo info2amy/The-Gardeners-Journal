@@ -45,6 +45,7 @@ export default function EditPlant(props) {
       }}
     >
       <h3>Edit Plant information:</h3>
+      <img src={image_url} alt="plant's image"/> <br/>
       <label>
         Update Plant Name:
         <input type="text" name="name" value={name} onChange={handleChange} />
@@ -69,6 +70,7 @@ export default function EditPlant(props) {
 
       <br />
       <button>Submit Changes</button>
+      <br />
       <br />
       <br />
       <button onClick={(e) => {

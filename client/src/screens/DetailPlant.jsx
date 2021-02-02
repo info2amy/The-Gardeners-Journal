@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { getOnePlant } from "../services/plants";
-import { useParams } from "react-router-dom";
+import { useParams, Link  } from "react-router-dom";
 import { addZone } from "../services/zones";
 
 export default function DetailPlant(props) {
@@ -62,6 +62,13 @@ export default function DetailPlant(props) {
           ))}
         </select>
         <button>add</button>
+
+        
+        <br/>
+        <br />
+        <Link to={`/plants/${plantItem?.id}/edit`}>
+                <button>Edit this information</button>
+              </Link>
       </form>
     </div>
   );

@@ -10641,3 +10641,215 @@ Processing by PlantsController#show as HTML
 Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.6ms | Allocations: 1528)
 
 
+Started GET "/plants/2" for ::1 at 2021-02-01 18:50:05 -0600
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlant Load (0.6ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mZone Load (0.5ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 2]]
+  ↳ app/controllers/plants_controller.rb:15:in `show'
+Completed 200 OK in 160ms (Views: 7.0ms | ActiveRecord: 9.1ms | Allocations: 3669)
+
+
+Started GET "/plants/1" for ::1 at 2021-02-01 18:50:54 -0600
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mZone Load (0.3ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 1]]
+  ↳ app/controllers/plants_controller.rb:15:in `show'
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.5ms | Allocations: 1597)
+
+
+Started GET "/plants/1" for ::1 at 2021-02-01 18:52:00 -0600
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mZone Load (0.6ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 1]]
+  ↳ app/controllers/plants_controller.rb:15:in `show'
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.8ms | Allocations: 1598)
+
+
+Started GET "/plants/1" for ::1 at 2021-02-01 18:52:07 -0600
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mZone Load (0.3ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 1]]
+  ↳ app/controllers/plants_controller.rb:15:in `show'
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.5ms | Allocations: 1598)
+
+
+Started GET "/plants/1" for ::1 at 2021-02-01 18:52:11 -0600
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mZone Load (0.3ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 1]]
+  ↳ app/controllers/plants_controller.rb:15:in `show'
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.7ms | Allocations: 1597)
+
+
+Started GET "/plants/1" for ::1 at 2021-02-01 18:52:17 -0600
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlant Load (0.8ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mZone Load (0.7ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 1]]
+  ↳ app/controllers/plants_controller.rb:15:in `show'
+Completed 200 OK in 9ms (Views: 2.8ms | ActiveRecord: 1.4ms | Allocations: 1597)
+
+
+Started GET "/plants/1" for ::1 at 2021-02-01 18:53:00 -0600
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mZone Load (0.3ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 1]]
+  ↳ app/controllers/plants_controller.rb:15:in `show'
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.6ms | Allocations: 1597)
+
+
+Started GET "/plants/1" for ::1 at 2021-02-01 18:54:50 -0600
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 1]]
+  ↳ app/controllers/plants_controller.rb:15:in `show'
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.5ms | Allocations: 1597)
+
+
+Started GET "/zones" for ::1 at 2021-02-01 18:55:43 -0600
+Started GET "/plants/1" for ::1 at 2021-02-01 18:55:43 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Started GET "/auth/verify" for ::1 at 2021-02-01 18:55:43 -0600
+Processing by PlantsController#show as HTML
+Started GET "/plants" for ::1 at 2021-02-01 18:55:43 -0600
+Processing by PlantsController#index as HTML
+  Parameters: {"id"=>"1"}
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPlant Load (0.5ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.5ms | Allocations: 7046)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mPlant Load (1.1ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+Completed 200 OK in 299ms (Views: 0.2ms | ActiveRecord: 9.0ms | Allocations: 25288)
+
+
+  [1m[36mZone Load (1.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 1]]
+  ↳ app/controllers/plants_controller.rb:15:in `show'
+Completed 200 OK in 304ms (Views: 2.1ms | ActiveRecord: 9.6ms | Allocations: 27412)
+
+
+Started GET "/plants/1" for ::1 at 2021-02-01 18:55:55 -0600
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mZone Load (0.4ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 1]]
+  ↳ app/controllers/plants_controller.rb:15:in `show'
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.8ms | Allocations: 1597)
+
+
+Started GET "/plants/2" for ::1 at 2021-02-01 18:55:59 -0600
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 2]]
+  ↳ app/controllers/plants_controller.rb:15:in `show'
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 1529)
+
+
+Started PUT "/plants/2" for ::1 at 2021-02-01 19:05:52 -0600
+Processing by PlantsController#update as HTML
+  Parameters: {"plant"=>{"name"=>"Daisies", "image_url"=>"https://plants4home.com/wp-content/uploads/2017/03/TL-2lebe-01.jpg", "plant_type"=>"flower", "bloom_time"=>"Summer"}, "id"=>"2"}
+  [1m[36mPlant Load (0.5ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/plants_controller.rb:31:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:31:in `update'
+  [1m[36mPlant Update (3.4ms)[0m  [1m[33mUPDATE "plants" SET "name" = $1, "updated_at" = $2 WHERE "plants"."id" = $3[0m  [["name", "Daisies"], ["updated_at", "2021-02-02 01:05:52.282410"], ["id", 2]]
+  ↳ app/controllers/plants_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/plants_controller.rb:31:in `update'
+Completed 200 OK in 42ms (Views: 0.8ms | ActiveRecord: 13.4ms | Allocations: 6099)
+
+
+Started GET "/plants/2" for ::1 at 2021-02-01 19:06:08 -0600
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlant Load (121.9ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mZone Load (0.5ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 2]]
+  ↳ app/controllers/plants_controller.rb:15:in `show'
+Completed 200 OK in 128ms (Views: 3.2ms | ActiveRecord: 122.4ms | Allocations: 1552)
+
+
+Started PUT "/plants/2" for ::1 at 2021-02-01 19:06:47 -0600
+Processing by PlantsController#update as HTML
+  Parameters: {"plant"=>{"name"=>"Daisies", "image_url"=>"https://plants4home.com/wp-content/uploads/2017/03/TL-2lebe-01.jpg", "plant_type"=>"flower", "bloom_time"=>"wherever she is planted!"}, "id"=>"2"}
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/plants_controller.rb:31:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:31:in `update'
+  [1m[36mPlant Update (0.5ms)[0m  [1m[33mUPDATE "plants" SET "bloom_time" = $1, "updated_at" = $2 WHERE "plants"."id" = $3[0m  [["bloom_time", "wherever she is planted!"], ["updated_at", "2021-02-02 01:06:47.798200"], ["id", 2]]
+  ↳ app/controllers/plants_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (40.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/plants_controller.rb:31:in `update'
+Completed 200 OK in 49ms (Views: 0.4ms | ActiveRecord: 41.6ms | Allocations: 3798)
+
+
+Started GET "/plants/2" for ::1 at 2021-02-01 19:06:53 -0600
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlant Load (0.4ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mZone Load (0.6ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 2]]
+  ↳ app/controllers/plants_controller.rb:15:in `show'
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 1.0ms | Allocations: 1529)
+
+
+Started PUT "/plants/2" for ::1 at 2021-02-01 19:07:17 -0600
+Processing by PlantsController#update as HTML
+  Parameters: {"plant"=>{"name"=>"Daisies", "image_url"=>"https://plants4home.com/wp-content/uploads/2017/03/TL-2lebe-01.jpg", "plant_type"=>"flower", "bloom_time"=>"Summer"}, "id"=>"2"}
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/plants_controller.rb:31:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:31:in `update'
+  [1m[36mPlant Update (0.2ms)[0m  [1m[33mUPDATE "plants" SET "bloom_time" = $1, "updated_at" = $2 WHERE "plants"."id" = $3[0m  [["bloom_time", "Summer"], ["updated_at", "2021-02-02 01:07:17.170529"], ["id", 2]]
+  ↳ app/controllers/plants_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (40.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/plants_controller.rb:31:in `update'
+Completed 200 OK in 49ms (Views: 0.3ms | ActiveRecord: 42.0ms | Allocations: 3798)
+
+
+Started GET "/plants/1" for ::1 at 2021-02-01 19:10:38 -0600
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlant Load (0.7ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mZone Load (0.6ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 1]]
+  ↳ app/controllers/plants_controller.rb:15:in `show'
+Completed 200 OK in 9ms (Views: 4.8ms | ActiveRecord: 1.3ms | Allocations: 1597)
+
+

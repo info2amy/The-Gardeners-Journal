@@ -12,7 +12,6 @@ export default function Plants(props) {
         <button>Add a new plant, bush or tree</button>
       </Link> <br/> <br/>
 
-
       {plants.map((plant) => (
         <React.Fragment key={plant.id}>
           <Link to={`/plants/${plant.id}`}>
@@ -22,9 +21,9 @@ export default function Plants(props) {
             <p>{plant.name} blooms in {plant.bloom_time}</p>
           {currentUser?.id  && (
             <>
-              <Link to={`/plants/${plant.id}/edit`}>
+              {/* <Link to={`/plants/${plant.id}/edit`}>
                 <button>Edit this information</button>
-              </Link>
+              </Link> */}
               <br/>
             </> 
           )}
