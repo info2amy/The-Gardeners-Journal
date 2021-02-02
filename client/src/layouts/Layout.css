@@ -9,12 +9,12 @@ body {
   z-index: 2;
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG_QvB6mPE-5Oobp4kXMvAUuFuCvHPJnU-zA&usqp=CAU");
   background-size: cover;
-  background-repeat:  no-repeat;
+  background-repeat: no-repeat;
   width: 100vw;
   height: 100vw;
   background-attachment: fixed;
   /* font-family: 'Architects Daughter', cursive; */
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   /* font-family: 'Yusei Magic', sans-serif; */
   letter-spacing: 1.2px;
 }
@@ -24,18 +24,18 @@ header {
   align-items: center;
   /* justify-content: space-between; */
   position: fixed;
-  top:  0;
+  top: 0;
   left: 0;
   width: 100%;
   background-color: #c3e5f4;
   z-index: 1;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   /* font-family: 'Architects Daughter', cursive; */
 }
 
 .logo {
-  color:#3567e6;
-  font-family: 'Fraunces', serif;
+  color: #3567e6;
+  font-family: "Fraunces", serif;
   margin-right: 45vw;
   /* font-family: 'Great Vibes', cursive; */
 }
@@ -53,15 +53,15 @@ button:hover {
   background-color: #a6f188;
   font-weight: bold;
 }
-.link {
-  border: 1px solid black;
-  border-radius: 8%;
-  box-shadow: 8px 8px 8px #302a2a99;
+
+a:link {
+  color: black;
   text-decoration: none;
+  text-decoration-color: black;
   transition: all 0.4s ease;
 }
 
-.link:hover {
+a:link:hover {
   transform: scale(1.1);
   color: #3567e6;
   background-color: #a6f188;
@@ -100,5 +100,9 @@ img {
 @media (max-width: 500px) {
   img {
     width: 85vw;
+  }
+
+  .logo {
+    margin-left: 15px;
   }
 }

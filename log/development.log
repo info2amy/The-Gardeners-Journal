@@ -14092,3 +14092,139 @@ Processing by PlantsController#show as HTML
 Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 0.8ms | Allocations: 1624)
 
 
+Started GET "/zones" for ::1 at 2021-02-02 15:15:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Started GET "/plants" for ::1 at 2021-02-02 15:15:25 -0600
+Started GET "/auth/verify" for ::1 at 2021-02-02 15:15:25 -0600
+Processing by PlantsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (19.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 26ms (Views: 0.3ms | ActiveRecord: 19.8ms | Allocations: 4993)
+
+
+  [1m[36mPlant Load (52.4ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+Completed 200 OK in 87ms (Views: 33.9ms | ActiveRecord: 52.4ms | Allocations: 19517)
+
+
+Started GET "/zones" for ::1 at 2021-02-02 15:17:54 -0600
+Started GET "/auth/verify" for ::1 at 2021-02-02 15:17:54 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Started GET "/plants" for ::1 at 2021-02-02 15:17:54 -0600
+Processing by AuthenticationController#verify as HTML
+Processing by PlantsController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mPlant Load (2.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.5ms | Allocations: 1806)
+
+
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+Completed 200 OK in 18ms (Views: 15.3ms | ActiveRecord: 2.0ms | Allocations: 7758)
+
+
+Started GET "/zones" for ::1 at 2021-02-02 15:24:19 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Started GET "/plants" for ::1 at 2021-02-02 15:24:19 -0600
+Processing by PlantsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-02-02 15:24:19 -0600
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 177ms (Views: 0.4ms | ActiveRecord: 151.8ms | Allocations: 17523)
+
+
+  [1m[36mPlant Load (1.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+Completed 200 OK in 268ms (Views: 267.4ms | ActiveRecord: 213.1ms | Allocations: 31820)
+
+
+Started GET "/zones" for ::1 at 2021-02-02 15:24:41 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Started GET "/plants" for ::1 at 2021-02-02 15:24:41 -0600
+Processing by PlantsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-02-02 15:24:41 -0600
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPlant Load (4.6ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+Completed 200 OK in 23ms (Views: 18.5ms | ActiveRecord: 4.6ms | Allocations: 11430)
+
+
+  [1m[36mUser Load (25.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 39ms (Views: 0.2ms | ActiveRecord: 25.3ms | Allocations: 19987)
+
+
+Started GET "/zones" for ::1 at 2021-02-02 15:25:01 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Started GET "/plants" for ::1 at 2021-02-02 15:25:01 -0600
+Processing by PlantsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-02-02 15:25:01 -0600
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPlant Load (8.0ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+Completed 200 OK in 31ms (Views: 23.2ms | ActiveRecord: 8.0ms | Allocations: 12684)
+
+
+  [1m[36mUser Load (9.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 28ms (Views: 0.5ms | ActiveRecord: 15.6ms | Allocations: 13097)
+
+
+Started GET "/auth/verify" for ::1 at 2021-02-02 15:39:57 -0600
+Started GET "/zones" for ::1 at 2021-02-02 15:39:57 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Processing by AuthenticationController#verify as HTML
+Started GET "/plants" for ::1 at 2021-02-02 15:39:57 -0600
+Processing by PlantsController#index as HTML
+  [1m[36mPlant Load (1.6ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+Completed 200 OK in 173ms (Views: 170.8ms | ActiveRecord: 143.2ms | Allocations: 22900)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 242ms (Views: 0.3ms | ActiveRecord: 184.1ms | Allocations: 31845)
+
+
+Started GET "/plants/1" for ::1 at 2021-02-02 15:45:56 -0600
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlant Load (0.5ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mZone Load (0.6ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 1]]
+  ↳ app/controllers/plants_controller.rb:15:in `show'
+Completed 200 OK in 76ms (Views: 7.5ms | ActiveRecord: 50.7ms | Allocations: 3695)
+
+
+Started GET "/zones" for ::1 at 2021-02-02 15:48:21 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/zones"):
+  
+Started GET "/plants" for ::1 at 2021-02-02 15:48:21 -0600
+Processing by PlantsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-02-02 15:48:21 -0600
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPlant Load (2.9ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+Completed 200 OK in 18ms (Views: 14.8ms | ActiveRecord: 2.9ms | Allocations: 7391)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 48ms (Views: 0.3ms | ActiveRecord: 15.2ms | Allocations: 18818)
+
+

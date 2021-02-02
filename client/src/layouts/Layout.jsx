@@ -21,8 +21,8 @@ export default function Layout(props) {
       </header>
 
       {currentUser && (
-        <>
-          <Link to="/plants">See Plants Gallery</Link>
+        <> <br/>
+          <Link to="/plants">See Plants Gallery</Link> <br/>
           <Link to="/zones">See Zones Map</Link>
         </>
       )}
