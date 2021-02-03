@@ -25115,3 +25115,244 @@ Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.7ms | Allocations: 1957)
 Completed 200 OK in 64ms (Views: 55.7ms | ActiveRecord: 8.6ms | Allocations: 44893)
 
 
+Started GET "/" for ::1 at 2021-02-03 08:12:47 -0600
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/amykumar/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/amykumar/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.2ms | Allocations: 292)
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 1525)
+
+
+Started GET "/auth/verify" for ::1 at 2021-02-03 08:13:24 -0600
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 107ms (Views: 1.5ms | ActiveRecord: 89.1ms | Allocations: 6072)
+
+
+Started GET "/zones" for ::1 at 2021-02-03 08:13:24 -0600
+Processing by ZonesController#index as HTML
+Started GET "/plants" for ::1 at 2021-02-03 08:13:24 -0600
+  [1m[36mZone Load (0.8ms)[0m  [1m[34mSELECT "zones".* FROM "zones"[0m
+Processing by PlantsController#index as HTML
+  ↳ app/controllers/zones_controller.rb:7:in `index'
+Completed 200 OK in 52ms (Views: 10.9ms | ActiveRecord: 36.2ms | Allocations: 8226)
+
+
+  [1m[36mPlant Load (0.7ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.4ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 41]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 42]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 43]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.3ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 44]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 45]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.3ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 46]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 47]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.3ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 48]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.3ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 49]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 50]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.1ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 51]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 52]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 53]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 54]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.1ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 55]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 56]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.1ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 57]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.1ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 58]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 59]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.1ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 60]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.3ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 61]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 62]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.3ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 63]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.1ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 64]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.1ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 65]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.1ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 66]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.1ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 67]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 68]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.1ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 69]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.1ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 70]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.1ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 71]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 72]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.1ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 73]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.1ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 74]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 75]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 76]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 77]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.1ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 78]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.3ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 79]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.4ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 80]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+Completed 200 OK in 173ms (Views: 118.5ms | ActiveRecord: 50.2ms | Allocations: 60303)
+
+
+Started POST "/auth/login" for ::1 at 2021-02-03 08:22:53 -0600
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 272ms (Views: 1.1ms | ActiveRecord: 12.7ms | Allocations: 2982)
+
+
+Started GET "/zones" for ::1 at 2021-02-03 08:22:53 -0600
+Processing by ZonesController#index as HTML
+Started GET "/plants" for ::1 at 2021-02-03 08:22:53 -0600
+Processing by PlantsController#index as HTML
+  [1m[36mZone Load (1.5ms)[0m  [1m[34mSELECT "zones".* FROM "zones"[0m
+  ↳ app/controllers/zones_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 1.5ms | Allocations: 2111)
+
+
+  [1m[36mPlant Load (1.4ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.7ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 41]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (1.5ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 42]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.4ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 43]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.3ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 44]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.3ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 45]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.5ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 46]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 47]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 48]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 49]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 50]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 51]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 52]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.3ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 53]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 54]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.3ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 55]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.7ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 56]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.4ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 57]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.6ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 58]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.7ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 59]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.6ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 60]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 61]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.1ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 62]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.1ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 63]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.1ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 64]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 65]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.4ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 66]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.6ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 67]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 68]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.3ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 69]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.4ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 70]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.7ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 71]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.3ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 72]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.3ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 73]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.3ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 74]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.6ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 75]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.3ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 76]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 77]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.3ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 78]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 79]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 80]]
+  ↳ app/controllers/plants_controller.rb:10:in `index'
+Completed 200 OK in 149ms (Views: 123.2ms | ActiveRecord: 25.4ms | Allocations: 48311)
+
+
+Started GET "/plants/41" for ::1 at 2021-02-03 08:23:47 -0600
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mZone Load (0.2ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 41]]
+  ↳ app/controllers/plants_controller.rb:15:in `show'
+Completed 200 OK in 9ms (Views: 2.4ms | ActiveRecord: 0.6ms | Allocations: 1700)
+
+
+Started GET "/plants/41" for ::1 at 2021-02-03 08:23:54 -0600
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPlant Load (0.6ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mZone Load (2.7ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 41]]
+  ↳ app/controllers/plants_controller.rb:15:in `show'
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 3.3ms | Allocations: 1598)
+
+
+Started GET "/plants/41" for ::1 at 2021-02-03 08:25:19 -0600
+Processing by PlantsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mPlant Load (0.4ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/plants_controller.rb:46:in `set_plant'
+  [1m[36mZone Load (6.8ms)[0m  [1m[34mSELECT "zones".* FROM "zones" INNER JOIN "plants_zones" ON "zones"."id" = "plants_zones"."zone_id" WHERE "plants_zones"."plant_id" = $1[0m  [["plant_id", 41]]
+  ↳ app/controllers/plants_controller.rb:15:in `show'
+Completed 200 OK in 15ms (Views: 5.0ms | ActiveRecord: 7.1ms | Allocations: 1598)
+
+

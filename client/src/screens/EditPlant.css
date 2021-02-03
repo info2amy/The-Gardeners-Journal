@@ -23,6 +23,6 @@
   .editPic {
     justify-content: center;
     width: 85vw;
-    margin-inline: 0 auto;
+    margin: 0 auto;
   }
 }
