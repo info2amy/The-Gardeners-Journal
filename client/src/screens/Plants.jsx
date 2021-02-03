@@ -23,7 +23,7 @@ export default function Plants(props) {
   });
   return (
     <div>
-      <h3>Plants, Bushes, Trees</h3>
+      <h1>Plants, Bushes, Trees</h1>
       <h4>Click on a plant for detailed information.</h4>
       <Link to="/plants/new">
         <button>Add a new plant, bush or tree</button>

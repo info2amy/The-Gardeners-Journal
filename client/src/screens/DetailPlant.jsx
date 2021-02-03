@@ -26,17 +26,9 @@ export default function DetailPlant(props) {
     setPlantItem(plantItem);
   };
 
-  //  - - - - "SELECT ZONE" drop-down: - - - -
-  // const handleChange = (e) => {
-  //   const { value } = e.target;
-  //   setZoneID(value);
-  // };
-  //  - - - - - - - - - - - - - - - - - - -
-
   return (
     <div>
-      {console.log(plantItem)};
-      <h2>{plantItem?.name}</h2>
+      {console.log(plantItem)};<h2>{plantItem?.name}</h2>
       <img src={plantItem?.image_url} alt="plant pic" />
       <h3>
         {plantItem?.name} blooms in {plantItem?.bloom_time}
@@ -44,14 +36,12 @@ export default function DetailPlant(props) {
       <h3>
         {plantItem?.name} is a {plantItem?.plant_type}
       </h3>
-
       {plantItem?.zones.map((zone) => (
         <h3 key={zone.id}>
           {" "}
           {plantItem?.name} grows best in zone {zone.zone}
         </h3>
       ))}
-
       <form onSubmit={handleSubmit}>
         <br />
         <br />

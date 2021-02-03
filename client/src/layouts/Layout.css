@@ -22,7 +22,6 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* justify-content: space-between; */
   position: fixed;
   top: 0;
   left: 0;
@@ -54,8 +53,10 @@ button:hover {
   font-weight: bold;
 }
 
-a:link, a:visited{
+a:link,
+a:visited {
   color: black;
+  font-size: 21px;
   text-decoration: none;
   text-decoration-color: black;
 }

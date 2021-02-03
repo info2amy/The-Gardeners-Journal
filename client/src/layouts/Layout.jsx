@@ -22,8 +22,8 @@ export default function Layout(props) {
 
       {currentUser && (
         <> <br/>
-          <Link to="/plants">See Plants Gallery</Link> <br/>
-          <Link to="/zones">See Zones Map</Link>
+          <Link to="/plants"> See Plants Gallery </Link> <br/>
+          <Link to="/zones"> See Zones Map </Link>
         </>
       )}
       {props.children}

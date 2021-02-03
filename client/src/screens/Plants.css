@@ -1,3 +1,8 @@
+h1 {
+  font-family: "Fraunces", serif;
+  
+}
+
 .plant-container {
   display:flex;
   flex-direction: row;

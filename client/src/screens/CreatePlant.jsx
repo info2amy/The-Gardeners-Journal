@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import "./CreatePlant.css"
 
 export default function CreatePlant(props) {
   const [formData, setFormData] = useState({
