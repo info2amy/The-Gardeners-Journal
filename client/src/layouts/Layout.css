@@ -18,6 +18,7 @@ body {
   /* font-family: 'Yusei Magic', sans-serif; */
   letter-spacing: 1.2px;
 }
+
 header {
   display: flex;
   justify-content: center;
@@ -37,6 +38,10 @@ header {
   font-family: "Fraunces", serif;
   margin-right: 45vw;
   /* font-family: 'Great Vibes', cursive; */
+}
+
+h1 {
+  font-family: "Fraunces", serif;
 }
 
 button {

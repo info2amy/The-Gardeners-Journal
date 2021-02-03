@@ -11,7 +11,7 @@ export default function Plants(props) {
     console.log(value);
     setZoneID(value);
   };
-  console.log(plants);
+  
   const filteredPlantsByZone = plants.filter((plant) => {
     if (zoneID.length) {
       const zoneIDsArr = plant.zones.map((zone) => {
