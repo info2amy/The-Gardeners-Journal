@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Plants.css";
 
 export default function Plants(props) {
-  const { plants, currentUser } = props;
+  const { plants, currentUser, zones } = props;
+  const [zoneID, setZoneID] = useState("");
+
+  const handleChange = (e) => {
+    const { value } = e.target;
+    console.log(value);
+    setZoneID(value);
+  };
+  console.log(plants);
+  const filteredPlantsByZone = plants.filter((plant) => {
+    if (zoneID.length) {
+      const zoneIDsArr = plant.zones.map((zone) => {
+        return zone.id;
+      });
+      return zoneIDsArr.includes(Number(zoneID));
+    }
+    return true;
+  });
   return (
     <div>
       <h3>Plants, Bushes, Trees</h3>
@@ -11,13 +28,20 @@ export default function Plants(props) {
       <Link to="/plants/new">
         <button>Add a new plant, bush or tree</button>
       </Link>
-
-
-
-      
+      <br /> <br />
+      <select defaultValue="zone" onChange={handleChange}>
+        <option value="">- Select a zone -</option>
+        {console.log(zones)};
+        {zones.map((zone) => (
+          <option value={zone.id} key={zone.id}>
+            {zone.zone}
+          </option>
+        ))}
+      </select>
+      <button>filter plants by zone</button>
       <br /> <br />
       <section className="plant-container">
-        {plants.map((plant) => (
+        {filteredPlantsByZone.map((plant) => (
           <React.Fragment key={plant.id}>
             <Link to={`/plants/${plant.id}`}>
               <img
@@ -27,7 +51,6 @@ export default function Plants(props) {
               />
               <p>{plant.name}</p>
             </Link>
-            {/* <p>{plant.name} blooms in {plant.bloom_time}</p> */}
             {currentUser?.id && (
               <>
                 {/* <Link to={`/plants/${plant.id}/edit`}>

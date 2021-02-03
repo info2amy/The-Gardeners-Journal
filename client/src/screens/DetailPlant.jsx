@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { getOnePlant } from "../services/plants";
 import { useParams, Link } from "react-router-dom";
 import { addZone } from "../services/zones";
@@ -27,14 +27,15 @@ export default function DetailPlant(props) {
   };
 
   //  - - - - "SELECT ZONE" drop-down: - - - -
-  const handleChange = (e) => {
-    const { value } = e.target;
-    setZoneID(value);
-  };
+  // const handleChange = (e) => {
+  //   const { value } = e.target;
+  //   setZoneID(value);
+  // };
   //  - - - - - - - - - - - - - - - - - - -
 
   return (
     <div>
+      {console.log(plantItem)};
       <h2>{plantItem?.name}</h2>
       <img src={plantItem?.image_url} alt="plant pic" />
       <h3>
@@ -52,24 +53,6 @@ export default function DetailPlant(props) {
       ))}
 
       <form onSubmit={handleSubmit}>
-        <select defaultValue="default" onChange={handleChange}>
-          {/* we can set a default value to tell people to select a zone*/}
-          {/* the "defaultValue" on the <select> tag needs to match the "value" on our default <option> tag */}
-          {/* we also add the "disabled" in the <option> to prevent users from selecting it*/}
-          <option disabled value="default">
-            -- Select a zone --
-          </option>
-          {/* now we loop over all zones and return an <option> tag for each */}
-          {props.zones.map((zone) => (
-            // we track the zone's id as the "value" which will get added to state onChange
-            // the zone's name goes between the open and close tag which is what the user sees
-            <option value={zone.id} key={zone.id}>
-              {zone.name}
-            </option>
-          ))}
-        </select>
-        <button>add</button>
-
         <br />
         <br />
         <Link to={`/plants/${plantItem?.id}/edit`}>

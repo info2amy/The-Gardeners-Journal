@@ -54,11 +54,10 @@ button:hover {
   font-weight: bold;
 }
 
-a:link {
+a:link, a:visited{
   color: black;
   text-decoration: none;
   text-decoration-color: black;
-  transition: all 0.4s ease;
 }
 
 a:link:hover {
@@ -66,6 +65,7 @@ a:link:hover {
   color: #3567e6;
   background-color: #a6f188;
   font-weight: bold;
+  transition: transform 0.4s ease;
 }
 
 .welcomeLogout p {
@@ -94,6 +94,7 @@ footer {
 
 img {
   width: 20vw;
+  height: 65%;
 }
 
 /*  - - - - - - - R E S P O N S I V E - - - - - - - */
