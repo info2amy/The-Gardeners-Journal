@@ -1,0 +1,28 @@
+.editForm {
+  display: flex;
+  flex-direction: row;
+  margin-top: 60px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.editPic img {
+  margin-right: 90px;
+  border: 3px solid black;
+  box-shadow: 8px 8px 8px #302a2a99;
+  height: 16 0px;
+}
+
+/*  - - - - - - - R E S P O N S I V E - - - - - - - */
+@media (max-width: 500px) {
+  .editForm {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .editPic {
+    justify-content: center;
+    width: 85vw;
+    margin: 0 auto;
+  }
+}

@@ -1,11 +1,12 @@
 import { React, useState } from "react";
+// import "./CreatePlant.css";
 
 export default function CreatePlant(props) {
   const [formData, setFormData] = useState({
     name: "",
     image_url: "",
     plant_type: "",
-    bloom_time: ""
+    bloom_time: "",
   });
   const { name, image_url, plant_type, bloom_time } = formData;
   const { handleCreate } = props;
@@ -26,21 +27,47 @@ export default function CreatePlant(props) {
       }}
     >
       <h3>Add a Plant, Bush or Tree to the list:</h3>
-      <label> <br />
+      <label>
+        {" "}
+        <br />
         Name of Plant:
+        <br />
         <input type="text" name="name" value={name} onChange={handleChange} />
-      </label> <br /> <br />
+      </label>{" "}
+      <br /> <br />
       <label>
         Image:
-        <input type="text" name="image_url" value={image_url} placeholder="add image url here" onChange={handleChange} />
-      </label> <br /> <br />
+        <br />
+        <input
+          type="text"
+          name="image_url"
+          value={image_url}
+          placeholder="add image url here"
+          onChange={handleChange}
+        />
+      </label>{" "}
+      <br /> <br />
       <label>
         Plant type:
-        <input type="text" name="plant_type" value={plant_type} placeholder="flower, bush or tree" onChange={handleChange} />
-      </label> <br /> <br />
+        <br />
+        <input
+          type="text"
+          name="plant_type"
+          value={plant_type}
+          placeholder="flower, bush or tree"
+          onChange={handleChange}
+        />
+      </label>{" "}
+      <br /> <br />
       <label>
         Bloom time:
-        <input type="text" name="bloom_time" value={bloom_time} onChange={handleChange} />
+        <br />
+        <input
+          type="text"
+          name="bloom_time"
+          value={bloom_time}
+          onChange={handleChange}
+        />
       </label>
       <br /> <br /> <br />
       <button>Submit</button>

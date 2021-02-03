@@ -1,0 +1,145 @@
+body {
+  height: 100vh;
+  min-height: 100%;
+  max-width: 100vw;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  z-index: 2;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG_QvB6mPE-5Oobp4kXMvAUuFuCvHPJnU-zA&usqp=CAU");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vw;
+  background-attachment: fixed;
+  /* font-family: 'Architects Daughter', cursive; */
+  font-family: "Playfair Display", serif;
+  /* font-family: 'Yusei Magic', sans-serif; */
+  letter-spacing: 1.2px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #c3e5f4;
+  z-index: 1;
+  font-family: "Playfair Display", serif;
+  /* font-family: 'Architects Daughter', cursive; */
+}
+
+.logo {
+  color: #3567e6;
+  font-family: "Fraunces", serif;
+  margin-right: 45vw;
+  /* font-family: 'Great Vibes', cursive; */
+}
+
+h1 {
+  font-family: "Fraunces", serif;
+}
+
+button {
+  border: 1px solid black;
+  border-radius: 8%;
+  box-shadow: 8px 8px 8px #302a2a99;
+  transition: all 0.4s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+  color: #3567e6;
+  background-color: #a6f188;
+  font-weight: bold;
+}
+
+a:link,
+a:visited {
+  color: black;
+  font-size: 21px;
+  text-decoration: none;
+  text-decoration-color: black;
+}
+
+a:link:hover {
+  transform: scale(1.1);
+  color: #3567e6;
+  background-color: #a6f188;
+  font-weight: bold;
+  transition: transform 0.4s ease;
+}
+
+.welcomeLogout p {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  background-color: #a6f188;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.layout-children {
+  padding: 100px 0 100px 0;
+  margin-top: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  width: 20vw;
+  height: 65%;
+}
+
+h3 {
+  margin: 50px;
+  font-size: 25px;
+}
+
+label {
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+input {
+  border: 1px solid black;
+  border-radius: 8%;
+  box-shadow: 8px 8px 8px #302a2a99;
+  transition: all 0.4s ease;
+  height: 20px;
+  width: 180px;
+}
+
+input:hover {
+  transform: scale(1.1);
+  color: #3567e6;
+  background-color: #a6f188;
+  font-weight: bold;
+}
+
+.deletebtn {
+  color: red;
+}
+
+
+/*  - - - - - - - R E S P O N S I V E - - - - - - - */
+@media (max-width: 500px) {
+  img {
+    width: 85vw;
+  }
+
+  .logo {
+    margin-left: 15px;
+  }
+}

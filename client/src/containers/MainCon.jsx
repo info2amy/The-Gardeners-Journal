@@ -66,7 +66,8 @@ export default function Home(props) {
         <CreatePlant handleCreate={handleCreate} />
       </Route>
       <Route path="/plants/:id/edit">
-        <EditPlant plants={plants} handleUpdate={handleUpdate} handleDelete={handleDelete} />
+        <EditPlant plants={plants} 
+        handleUpdate={handleUpdate} handleDelete={handleDelete} />
       </Route>
       <Route path="/plants/:id">
         <DetailPlant zones={zones} />
@@ -74,6 +75,7 @@ export default function Home(props) {
       <Route path="/plants">
         <Plants
           plants={plants}
+          zones={zones}
           handleDelete={handleDelete}
           currentUser={currentUser} />
       </Route>

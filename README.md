@@ -147,11 +147,11 @@ client/src
 
 | Task                 | Priority | Estimated Time | Time Invested | Actual Time |
 | -------------------- | :------: | :------------: | :-----------: | :---------: |
-| Back-end development |    H     |     10 hrs     |     - hrs     |    - hrs    |
-| Front-end setup      |    H     |     10 hrs     |     - hrs     |    - hrs    |
-| Front-end full CRUD  |    H     |     10 hrs     |     - hrs     |    - hrs    |
-| Styling              |    H     |     10 hrs     |     - hrs     |    - hrs    |
-| TOTAL                |          |     40 hrs     |     - hrs     |    - hrs    |
+| Back-end development |    H     |     10 hrs     |     12 hrs     |    12 hrs    |
+| Front-end setup      |    H     |     10 hrs     |     12 hrs     |    12 hrs    |
+| Front-end full CRUD  |    H     |     10 hrs     |     12 hrs     |    12 hrs    |
+| Styling              |    H     |     10 hrs     |     12 hrs     |    12 hrs    |
+| TOTAL                |          |     40 hrs     |     48 hrs     |    48 hrs    |
 
 >
 
@@ -181,7 +181,18 @@ client/src
 
 ## Code Showcase
 
-> TBD
+> I was excited to be able to struggle with (and eventually conquer!) adding a drop-down filter that allows users to select and view all plants that grow in a particular zone.
+
+```javascript
+const filteredPlantsByZone = plants.filter((plant) => {
+    if (zoneID.length) {
+      const zoneIDsArr = plant.zones.map((zone) => {
+        return zone.id;
+      });
+      return zoneIDsArr.includes(Number(zoneID));
+    }
+    return true;
+```
 
 ## Code Issues & Resolutions
 
