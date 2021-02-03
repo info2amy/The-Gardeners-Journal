@@ -86,7 +86,6 @@ footer {
 }
 
 .layout-children {
-  /* flex: 2; */
   padding: 100px 0 100px 0;
   margin-top: 50px;
   align-items: center;
@@ -97,6 +96,37 @@ img {
   width: 20vw;
   height: 65%;
 }
+
+h3 {
+  margin: 50px;
+  font-size: 25px;
+}
+
+label {
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+input {
+  border: 1px solid black;
+  border-radius: 8%;
+  box-shadow: 8px 8px 8px #302a2a99;
+  transition: all 0.4s ease;
+  height: 20px;
+  width: 180px;
+}
+
+input:hover {
+  transform: scale(1.1);
+  color: #3567e6;
+  background-color: #a6f188;
+  font-weight: bold;
+}
+
+.deletebtn {
+  color: red;
+}
+
 
 /*  - - - - - - - R E S P O N S I V E - - - - - - - */
 @media (max-width: 500px) {

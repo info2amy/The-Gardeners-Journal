@@ -47,22 +47,22 @@ export default function EditPlant(props) {
       <h3>Edit Plant information:</h3>
       <img src={image_url} alt="plant's pic"/> <br/>
       <label>
-        Update Plant Name:
+        Update Plant Name:<br/>
         <input type="text" name="name" value={name} onChange={handleChange} />
       </label> <br/> <br/>
       <label>
-        Update Plant Image:
+        Update Plant Image:<br/>
         <input type="text" name="image_url" placeholder="enter image url" value={image_url} onChange={handleChange} />
       </label> <br/> <br/>
 
       <label>
-        Update Plant type (for sorting):
+        Update Plant type (for sorting):<br/>
         <input type="text" name="plant_type" placeholder="flower, bush or tree" value={plant_type}
         onChange={handleChange} />
       </label> <br /> <br />
 
       <label>
-        Update Bloom time:
+        Update Bloom time:<br/>
         <input type="text" name="bloom_time" value={bloom_time} onChange={handleChange} />
       </label>
       <br /> <br /> <br />
@@ -73,7 +73,7 @@ export default function EditPlant(props) {
       <br />
       <br />
       <br />
-      <button onClick={(e) => {
+      <button className='deletebtn' onClick={(e) => {
         e.preventDefault();
         handleDelete(id)}}>Delete This Plant</button>
       

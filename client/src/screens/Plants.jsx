@@ -53,21 +53,12 @@ export default function Plants(props) {
             </Link>
             {currentUser?.id && (
               <>
-                {/* <Link to={`/plants/${plant.id}/edit`}>
-                <button>Edit this information</button>
-              </Link> */}
                 <br />
               </>
             )}
-            <br /> <br />
           </React.Fragment>
         ))}
       </section>
-      <br />
-      <br />
-      {/* <Link to="/plants/new">
-        <button>Add a new plant, bush or tree</button>
-      </Link> */}
     </div>
   );
 }
