@@ -26146,3 +26146,369 @@ Completed 200 OK in 92ms (Views: 22.1ms | ActiveRecord: 69.0ms | Allocations: 26
 Completed 200 OK in 146ms (Views: 110.8ms | ActiveRecord: 34.9ms | Allocations: 48835)
 
 
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (114.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "The_Gardeners_Journal_development"[0m
+  [1m[35m (60.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "The_Gardeners_Journal_test"[0m
+  [1m[35m (342.5ms)[0m  [1m[35mCREATE DATABASE "The_Gardeners_Journal_development" ENCODING = 'unicode'[0m
+  [1m[35m (123.1ms)[0m  [1m[35mCREATE DATABASE "The_Gardeners_Journal_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "plants" CASCADE[0m
+  [1m[35m (39.1ms)[0m  [1m[35mCREATE TABLE "plants" ("id" bigserial primary key, "name" character varying, "user_id" bigint NOT NULL, "image_url" character varying, "plant_type" character varying, "deciduous" boolean, "bloom_time" character varying, "watering" character varying, "pruning" character varying, "fertilizing" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE INDEX "index_plants_on_user_id" ON "plants" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "plants_zones" CASCADE[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "plants_zones" ("plant_id" bigint NOT NULL, "zone_id" bigint NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "zones" CASCADE[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "zones" ("id" bigserial primary key, "zone" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (9.4ms)[0m  [1m[35mALTER TABLE "plants" ADD CONSTRAINT "fk_rails_05ea0b909d"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210129151319)[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210128220726),
+(20210128233411),
+(20210129002519),
+(20210129002653);
+
+[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-11 00:10:43.558055"], ["updated_at", "2021-02-11 00:10:43.558055"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "aaf8326e470216bdaabb2ceaf3fe4dc49f51dd6b"], ["created_at", "2021-02-11 00:10:43.565594"], ["updated_at", "2021-02-11 00:10:43.565594"]]
+  [1m[36mTRANSACTION (40.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "plants" CASCADE[0m
+  [1m[35m (22.9ms)[0m  [1m[35mCREATE TABLE "plants" ("id" bigserial primary key, "name" character varying, "user_id" bigint NOT NULL, "image_url" character varying, "plant_type" character varying, "deciduous" boolean, "bloom_time" character varying, "watering" character varying, "pruning" character varying, "fertilizing" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE INDEX "index_plants_on_user_id" ON "plants" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "plants_zones" CASCADE[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "plants_zones" ("plant_id" bigint NOT NULL, "zone_id" bigint NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "zones" CASCADE[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "zones" ("id" bigserial primary key, "zone" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (7.1ms)[0m  [1m[35mALTER TABLE "plants" ADD CONSTRAINT "fk_rails_05ea0b909d"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210129151319)[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210128220726),
+(20210128233411),
+(20210129002519),
+(20210129002653);
+
+[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-11 00:10:43.738805"], ["updated_at", "2021-02-11 00:10:43.738805"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.8ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2021-02-11 00:10:43.742812"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "aaf8326e470216bdaabb2ceaf3fe4dc49f51dd6b"], ["created_at", "2021-02-11 00:10:43.747119"], ["updated_at", "2021-02-11 00:10:43.747119"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mZone Load (0.4ms)[0m  [1m[34mSELECT "zones".* FROM "zones"[0m
+  [1m[36mPlant Load (0.6ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "admin"], ["email", "admin@email.com"], ["password_digest", "$2a$12$GMXxd5VCT7LbVLLT8Z/MZOO2O.h27E4IWVFwVwPmcT4jujQzqZggK"], ["created_at", "2021-02-11 00:10:44.050327"], ["updated_at", "2021-02-11 00:10:44.050327"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (6.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.8ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Astilbe"], ["user_id", 1], ["image_url", "https://www.americanmeadows.com/media/wysiwyg/a/s/astilbe_key_west_1of2.jpg"], ["plant_type", "flower"], ["bloom_time", "Fall"], ["created_at", "2021-02-11 00:10:44.077063"], ["updated_at", "2021-02-11 00:10:44.077063"]]
+  [1m[36mTRANSACTION (22.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.4ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Daisy"], ["user_id", 1], ["image_url", "https://plants4home.com/wp-content/uploads/2017/03/TL-2lebe-01.jpg"], ["plant_type", "flower"], ["bloom_time", "Summer"], ["created_at", "2021-02-11 00:10:44.102609"], ["updated_at", "2021-02-11 00:10:44.102609"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Begonia"], ["user_id", 1], ["image_url", "https://www.burpee.com/dw/image/v2/ABAQ_PRD/on/demandware.static/-/Sites-masterCatalog_Burpee/default/dwf2ba27db/Images/Product%20Images/prod000134/prod000134.jpg?sw=265&sh=312&sm=fit"], ["plant_type", "flower"], ["bloom_time", "Spring through Fall"], ["created_at", "2021-02-11 00:10:44.106251"], ["updated_at", "2021-02-11 00:10:44.106251"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Bleeding Heart"], ["user_id", 1], ["image_url", "https://cdn11.bigcommerce.com/s-999jbj41m8/product_images/uploaded_images/van-zyverden-perennials-83527-64-1000.jpg"], ["plant_type", "flower"], ["bloom_time", "Spring"], ["created_at", "2021-02-11 00:10:44.109185"], ["updated_at", "2021-02-11 00:10:44.109185"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Columbine"], ["user_id", 1], ["image_url", "https://gardenerspath.com/wp-content/uploads/2017/02/How-to-Grow-Beautiful-Columbine-Flowers-Cover2.jpg"], ["plant_type", "flower"], ["bloom_time", "Spring through Summer"], ["created_at", "2021-02-11 00:10:44.112451"], ["updated_at", "2021-02-11 00:10:44.112451"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Dianthus"], ["user_id", 1], ["image_url", "https://www.burpee.com/dw/image/v2/ABAQ_PRD/on/demandware.static/-/Sites-masterCatalog_Burpee/default/dw4859818f/Images/Product%20Images/prod002081/prod002081.jpg?sw=265&sh=312&sm=fit"], ["plant_type", "flower"], ["bloom_time", "Spring through Fall"], ["created_at", "2021-02-11 00:10:44.115349"], ["updated_at", "2021-02-11 00:10:44.115349"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Gaura"], ["user_id", 1], ["image_url", "https://horomidis.gr/wp-content/uploads/2013/08/FLSGAU29727_3.jpg"], ["plant_type", "flower"], ["bloom_time", "Summer"], ["created_at", "2021-02-11 00:10:44.118148"], ["updated_at", "2021-02-11 00:10:44.118148"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Lavender"], ["user_id", 1], ["image_url", "https://i.etsystatic.com/7823519/r/il/797209/1388738084/il_1588xN.1388738084_bcay.jpg"], ["plant_type", "flower"], ["bloom_time", "Spring through Fall"], ["created_at", "2021-02-11 00:10:44.121296"], ["updated_at", "2021-02-11 00:10:44.121296"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.4ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Rose"], ["user_id", 1], ["image_url", "https://homegardenandhomestead.com/wp-content/uploads/2019/08/red-rose-bush.jpeg"], ["plant_type", "flower"], ["bloom_time", "Spring"], ["created_at", "2021-02-11 00:10:44.124237"], ["updated_at", "2021-02-11 00:10:44.124237"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Snapdragon"], ["user_id", 1], ["image_url", "https://www.hortmag.com/.image/t_share/MTcyMzM2ODgyNjQ5MjEyODY4/snaptinipeachsnapdragon.jpg"], ["plant_type", "Summer"], ["bloom_time", "BB"], ["created_at", "2021-02-11 00:10:44.127521"], ["updated_at", "2021-02-11 00:10:44.127521"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "African Violet"], ["user_id", 1], ["image_url", "https://ae01.alicdn.com/kf/HTB11oWMLpXXXXaCaXXXq6xXFXXXD/50pcs-rare-colours-Violet-seeds-Perennial-Herb-Matthiola-Incana-flower-Seeds-Very-Beautiful-bonsai-plants-for.jpg"], ["plant_type", "indoor"], ["bloom_time", "Summer"], ["created_at", "2021-02-11 00:10:44.130721"], ["updated_at", "2021-02-11 00:10:44.130721"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.4ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Jade"], ["user_id", 1], ["image_url", "https://robertsonsflowers.imgix.net/images/itemVariation/jadeplantinnewportpot-200311121403.jpg"], ["plant_type", "indoor"], ["bloom_time", "no blooms"], ["created_at", "2021-02-11 00:10:44.133753"], ["updated_at", "2021-02-11 00:10:44.133753"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Aloe Vera"], ["user_id", 1], ["image_url", "https://www.almanac.com/sites/default/files/image_nodes/aloe-vera-white-pot_sunwand24-ss_edit.jpg"], ["plant_type", "indoor"], ["bloom_time", "no blooms"], ["created_at", "2021-02-11 00:10:44.136883"], ["updated_at", "2021-02-11 00:10:44.136883"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Amaryllis"], ["user_id", 1], ["image_url", "https://www.gardeners.com/dw/image/v2/AABF_PRD/on/demandware.static/-/Sites-GSC_Products/default/dw033e44e4/Products/8599330-group-red-pot-h_2019_deluxe-potted-amaryllis-with-stake.jpg?sw=840&sh=1120&sm=fit"], ["plant_type", "indoor"], ["bloom_time", "Summer"], ["created_at", "2021-02-11 00:10:44.139935"], ["updated_at", "2021-02-11 00:10:44.139935"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Asparagus Fern"], ["user_id", 1], ["image_url", "https://gardenerspath.com/wp-content/uploads/2019/02/How-to-Grow-Asparagus-Ferns-in-Pots.jpg"], ["plant_type", "indoor"], ["bloom_time", "no blooms"], ["created_at", "2021-02-11 00:10:44.142628"], ["updated_at", "2021-02-11 00:10:44.142628"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Bamboo Palm"], ["user_id", 1], ["image_url", "https://images-na.ssl-images-amazon.com/images/I/61f4SumHFuL._SY741_.jpg"], ["plant_type", "indoor"], ["bloom_time", "no blooms"], ["created_at", "2021-02-11 00:10:44.145646"], ["updated_at", "2021-02-11 00:10:44.145646"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Chinese Evergreen"], ["user_id", 1], ["image_url", "https://www.whiteflowerfarm.com/mas_assets/cache/image/5/9/f/f/23039.Jpg"], ["plant_type", "indoor"], ["bloom_time", "no blooms"], ["created_at", "2021-02-11 00:10:44.148358"], ["updated_at", "2021-02-11 00:10:44.148358"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Orchid"], ["user_id", 1], ["image_url", "https://assets.eflorist.com/assets/products/PHR_/T99-1A.jpg"], ["plant_type", "indoor"], ["bloom_time", "Summer"], ["created_at", "2021-02-11 00:10:44.151127"], ["updated_at", "2021-02-11 00:10:44.151127"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Croton"], ["user_id", 1], ["image_url", "https://www.rgfloral.com/wp-content/uploads/20191012_093105-01-e1570899299456.jpeg"], ["plant_type", "indoor"], ["bloom_time", "no blooms"], ["created_at", "2021-02-11 00:10:44.154449"], ["updated_at", "2021-02-11 00:10:44.154449"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Ficus"], ["user_id", 1], ["image_url", "https://images-na.ssl-images-amazon.com/images/I/41aCo3Hw74L._AC_.jpg"], ["plant_type", "indoor"], ["bloom_time", "no blooms"], ["created_at", "2021-02-11 00:10:44.157374"], ["updated_at", "2021-02-11 00:10:44.157374"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Hydrangea"], ["user_id", 1], ["image_url", "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-680839667-1555611719.jpg?crop=0.752xw:1.00xh;0.219xw,0&resize=480:*"], ["plant_type", "bush"], ["bloom_time", "Summer through Fall"], ["created_at", "2021-02-11 00:10:44.160096"], ["updated_at", "2021-02-11 00:10:44.160096"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Burning Bush"], ["user_id", 1], ["image_url", "https://i.etsystatic.com/13098602/r/il/9b9d8a/1054050109/il_1588xN.1054050109_jlc2.jpg"], ["plant_type", "bush"], ["bloom_time", "no blooms"], ["created_at", "2021-02-11 00:10:44.163300"], ["updated_at", "2021-02-11 00:10:44.163300"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Barberry"], ["user_id", 1], ["image_url", "https://www.naturesmulch.com/wp-content/uploads/2020/02/Admiration-Japanese-Barberry.jpg"], ["plant_type", "bush"], ["bloom_time", "no blooms"], ["created_at", "2021-02-11 00:10:44.165883"], ["updated_at", "2021-02-11 00:10:44.165883"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Sage"], ["user_id", 1], ["image_url", "https://s3.amazonaws.com/cdn.gurneys.com/images/800/67659.jpg"], ["plant_type", "bush"], ["bloom_time", "Summer through Fall"], ["created_at", "2021-02-11 00:10:44.168512"], ["updated_at", "2021-02-11 00:10:44.168512"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.4ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Weigela"], ["user_id", 1], ["image_url", "https://cdn.shopify.com/s/files/1/0059/8835/2052/products/Weigela_Sonic_Bloom_Pink_1_FGT_450x.jpg?v=1605224263"], ["plant_type", "bush"], ["bloom_time", "Summer, again in Fall"], ["created_at", "2021-02-11 00:10:44.171185"], ["updated_at", "2021-02-11 00:10:44.171185"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Butterfly Bush"], ["user_id", 1], ["image_url", "https://i.etsystatic.com/21543414/r/il/cd64ff/2093777476/il_1588xN.2093777476_ghi4.jpg"], ["plant_type", "bush"], ["bloom_time", "Summer"], ["created_at", "2021-02-11 00:10:44.174268"], ["updated_at", "2021-02-11 00:10:44.174268"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Ninebark"], ["user_id", 1], ["image_url", "https://www.altums.com/wp-content/uploads/2019/08/altums-amber-jubilee-ninebark-4.jpg"], ["plant_type", "bush"], ["bloom_time", "no blooms"], ["created_at", "2021-02-11 00:10:44.177151"], ["updated_at", "2021-02-11 00:10:44.177151"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Forsythia"], ["user_id", 1], ["image_url", "https://bloximages.chicago2.vip.townnews.com/capjournal.com/content/tncms/assets/v3/editorial/0/e4/0e4a13b6-752c-11ea-987d-87d16d2fe1d7/5e865e61cc9ab.image.png?resize=400%2C392"], ["plant_type", "bush"], ["bloom_time", "Spring"], ["created_at", "2021-02-11 00:10:44.181867"], ["updated_at", "2021-02-11 00:10:44.181867"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Boxwood"], ["user_id", 1], ["image_url", "https://cdn.shopify.com/s/files/1/0062/8532/8445/products/English_Boxwood_1_BB_1024x1024.jpg?v=1602788338"], ["plant_type", "bush"], ["bloom_time", "no blooms"], ["created_at", "2021-02-11 00:10:44.184627"], ["updated_at", "2021-02-11 00:10:44.184627"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Azalea"], ["user_id", 1], ["image_url", "https://terra4incognita.files.wordpress.com/2008/05/100_9790sm.jpg"], ["plant_type", "bush"], ["bloom_time", "Spring"], ["created_at", "2021-02-11 00:10:44.187578"], ["updated_at", "2021-02-11 00:10:44.187578"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Japanese Maple"], ["user_id", 1], ["image_url", "https://i.etsystatic.com/23754746/r/il/8514e2/2710452923/il_1588xN.2710452923_aq7p.jpg"], ["plant_type", "tree"], ["bloom_time", "no blooms"], ["created_at", "2021-02-11 00:10:44.190451"], ["updated_at", "2021-02-11 00:10:44.190451"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.5ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Cypress"], ["user_id", 1], ["image_url", "https://images-na.ssl-images-amazon.com/images/I/81CMfWJpogL._AC_SY450_.jpg"], ["plant_type", "tree"], ["bloom_time", "no blooms"], ["created_at", "2021-02-11 00:10:44.193196"], ["updated_at", "2021-02-11 00:10:44.193196"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Black Gum"], ["user_id", 1], ["image_url", "https://i.pinimg.com/originals/de/25/b7/de25b7ba38d5138a8c4e1e6fb3251b8f.jpg"], ["plant_type", "tree"], ["bloom_time", "no blooms"], ["created_at", "2021-02-11 00:10:44.196502"], ["updated_at", "2021-02-11 00:10:44.196502"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.2ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Magnolia"], ["user_id", 1], ["image_url", "https://i.pinimg.com/originals/28/54/e5/2854e53f2a44bf3334da07effd4cef0f.jpg"], ["plant_type", "tree"], ["bloom_time", "Summer"], ["created_at", "2021-02-11 00:10:44.199329"], ["updated_at", "2021-02-11 00:10:44.199329"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Arborvitae"], ["user_id", 1], ["image_url", "https://i.pinimg.com/236x/a9/0c/f0/a90cf0c22bfd6142905ac513eb625ed3.jpg"], ["plant_type", "tree"], ["bloom_time", "no blooms"], ["created_at", "2021-02-11 00:10:44.202066"], ["updated_at", "2021-02-11 00:10:44.202066"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Crabapple"], ["user_id", 1], ["image_url", "https://www.thetreecenter.com/c/uploads/crab-flowering-profusion-1.jpg"], ["plant_type", "tree"], ["bloom_time", "Spring"], ["created_at", "2021-02-11 00:10:44.205526"], ["updated_at", "2021-02-11 00:10:44.205526"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Crapemyrtle"], ["user_id", 1], ["image_url", "https://cdn.shopify.com/s/files/1/0062/8532/8445/products/Pnk_Velour_Crape_Myrtle_1_BB_1024x1024.jpg?v=1590779910"], ["plant_type", "tree"], ["bloom_time", "Summer"], ["created_at", "2021-02-11 00:10:44.208483"], ["updated_at", "2021-02-11 00:10:44.208483"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Willow"], ["user_id", 1], ["image_url", "https://nwaplantsinc.com/wp-content/uploads/2020/04/weepingwillow.jpg"], ["plant_type", "tree"], ["bloom_time", "no blooms"], ["created_at", "2021-02-11 00:10:44.211842"], ["updated_at", "2021-02-11 00:10:44.211842"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Blue Spruce"], ["user_id", 1], ["image_url", "https://www.countylinenursery.net/uploads/7/4/9/3/74938711/s346013446412642482_p675_i3_w1280.jpeg"], ["plant_type", "tree"], ["bloom_time", "no blooms"], ["created_at", "2021-02-11 00:10:44.217387"], ["updated_at", "2021-02-11 00:10:44.217387"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("name", "user_id", "image_url", "plant_type", "bloom_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Redbud"], ["user_id", 1], ["image_url", "https://www.naturehills.com/media/catalog/product/cache/35c1080e597d6a74b42d0d88ced836c1/e/a/eastern-redbud-group.jpg"], ["plant_type", "tree"], ["bloom_time", "Spring"], ["created_at", "2021-02-11 00:10:44.220494"], ["updated_at", "2021-02-11 00:10:44.220494"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "plants"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mZone Create (2.9ms)[0m  [1m[32mINSERT INTO "zones" ("zone", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["zone", 0], ["created_at", "2021-02-11 00:10:44.229524"], ["updated_at", "2021-02-11 00:10:44.229524"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mZone Create (0.2ms)[0m  [1m[32mINSERT INTO "zones" ("zone", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["zone", 1], ["created_at", "2021-02-11 00:10:44.235433"], ["updated_at", "2021-02-11 00:10:44.235433"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mZone Create (0.2ms)[0m  [1m[32mINSERT INTO "zones" ("zone", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["zone", 2], ["created_at", "2021-02-11 00:10:44.238284"], ["updated_at", "2021-02-11 00:10:44.238284"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mZone Create (0.2ms)[0m  [1m[32mINSERT INTO "zones" ("zone", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["zone", 3], ["created_at", "2021-02-11 00:10:44.240982"], ["updated_at", "2021-02-11 00:10:44.240982"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mZone Create (0.2ms)[0m  [1m[32mINSERT INTO "zones" ("zone", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["zone", 4], ["created_at", "2021-02-11 00:10:44.243488"], ["updated_at", "2021-02-11 00:10:44.243488"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mZone Create (0.2ms)[0m  [1m[32mINSERT INTO "zones" ("zone", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["zone", 5], ["created_at", "2021-02-11 00:10:44.246499"], ["updated_at", "2021-02-11 00:10:44.246499"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mZone Create (0.2ms)[0m  [1m[32mINSERT INTO "zones" ("zone", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["zone", 6], ["created_at", "2021-02-11 00:10:44.249073"], ["updated_at", "2021-02-11 00:10:44.249073"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mZone Create (0.2ms)[0m  [1m[32mINSERT INTO "zones" ("zone", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["zone", 7], ["created_at", "2021-02-11 00:10:44.251517"], ["updated_at", "2021-02-11 00:10:44.251517"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mZone Create (0.2ms)[0m  [1m[32mINSERT INTO "zones" ("zone", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["zone", 8], ["created_at", "2021-02-11 00:10:44.254226"], ["updated_at", "2021-02-11 00:10:44.254226"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mZone Create (0.2ms)[0m  [1m[32mINSERT INTO "zones" ("zone", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["zone", 9], ["created_at", "2021-02-11 00:10:44.256860"], ["updated_at", "2021-02-11 00:10:44.256860"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mZone Create (0.3ms)[0m  [1m[32mINSERT INTO "zones" ("zone", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["zone", 10], ["created_at", "2021-02-11 00:10:44.259418"], ["updated_at", "2021-02-11 00:10:44.259418"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "zones"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.3ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 1], ["zone_id", 6]]
+  [1m[36mTRANSACTION (40.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.2ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 2], ["zone_id", 7]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.2ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 3], ["zone_id", 8]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.1ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 4], ["zone_id", 6]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.2ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 5], ["zone_id", 7]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.1ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 6], ["zone_id", 8]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.1ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 7], ["zone_id", 6]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.2ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 8], ["zone_id", 7]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.1ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 9], ["zone_id", 8]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.2ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 10], ["zone_id", 6]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.1ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 11], ["zone_id", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.1ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 12], ["zone_id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.2ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 13], ["zone_id", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.2ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 14], ["zone_id", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.2ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 15], ["zone_id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.2ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 16], ["zone_id", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.1ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 17], ["zone_id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.2ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 18], ["zone_id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.4ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 19], ["zone_id", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.2ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 20], ["zone_id", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.1ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 21], ["zone_id", 7]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.1ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 22], ["zone_id", 8]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.1ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 23], ["zone_id", 6]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.1ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 24], ["zone_id", 7]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.1ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 25], ["zone_id", 8]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.2ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 26], ["zone_id", 6]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.1ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 27], ["zone_id", 7]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.2ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 28], ["zone_id", 8]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.2ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 29], ["zone_id", 6]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.1ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 30], ["zone_id", 7]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.2ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 31], ["zone_id", 8]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.1ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 32], ["zone_id", 6]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.2ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 33], ["zone_id", 7]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.2ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 34], ["zone_id", 8]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.1ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 35], ["zone_id", 6]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.2ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 36], ["zone_id", 7]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.1ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 37], ["zone_id", 8]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.1ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 38], ["zone_id", 6]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.1ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 39], ["zone_id", 7]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlant::HABTM_Zones Create (0.1ms)[0m  [1m[32mINSERT INTO "plants_zones" ("plant_id", "zone_id") VALUES ($1, $2)[0m  [["plant_id", 40], ["zone_id", 8]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
